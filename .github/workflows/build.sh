@@ -8,4 +8,3 @@ if [ "$CHECK" = "" ]; then
     rm $HOME/mdbook-linkcheck
 fi
 mdbook build
-#
