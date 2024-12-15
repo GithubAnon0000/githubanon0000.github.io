@@ -1,8 +1,9 @@
-Best viewed on the website: https://docs.ankiweb.net
+Am besten betrachtet auf der Webseite: https://docs.ankiweb.net
 
-This manual is licensed under the CC BY-SA 4 license:
+Dieses Manual ist unter der CC BY-SA 4 Lizenz lizensiert:
 
 https://creativecommons.org/licenses/by-sa/4.0/
 
-Pull requests are welcome. Unless you state otherwise, any pull requests you
-submit will be licensed under the above license. Please see [CONTRIBUTING](CONTRIBUTING.md) for more details.
+
+Pull Requests sind willkommen. Sofern nicht anderweitig angegeben, werden all Ihre Pull Requests unter der
+oben angegebenen Lizenz eingereicht. Für weitere Informationen lesen Sie bitte [CONTRIBUTING](CONTRIBUTING.md).
