@@ -1,6 +1,7 @@
-# Anki not picking up GTK theme on Gnome/Linux
+# Anki übernimmt das GTK Thema unter Gnome/Linux nicht
 
-You can work around this issue by explicitly telling Anki what the GTK theme is. Run the following commands in a terminal:
+Sie können dieses Problem umgehen, indem Sie Anki explizit mitteilen, welches
+das GTK Thema ist. Führen Sie hierfür die nachfolgenden Befehle im Terminal aus:
 
 ```shell
 theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
@@ -8,4 +9,5 @@ echo "gtk-theme-name=$theme" >> ~/.gtkrc-2.0
 echo "export GTK2_RC_FILES=$HOME/.gtkrc-2.0" >> ~/.profile
 ```
 
-Then log out and log back into your computer, and Anki should pick up the GTK theme.
+Anschließend melden Sie sich an Ihrem Computer ab und wieder an. Anki sollte nun
+das richtige GTK Thema verwenden.

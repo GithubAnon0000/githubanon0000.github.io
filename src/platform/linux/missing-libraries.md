@@ -1,14 +1,20 @@
-# Missing Libraries
+# Fehlende Bibliotheksdateien
 
-If Anki fails to start, please run it from a terminal with `anki`. If it says a
-library is missing, please install it and try again.
+Sollte Anki nicht starten können, führen Sie es bitte im Terminal mit `anki`
+aus. Wenn es Sie darüber informiert, dass Bibliotheksdateien fehlen, dann
+installieren Sie diese bitte und versuchen Sie es erneut.
 
-If it complains about no platform being available, please start Anki with the
-following command line, which should reveal a missing library:
+
+Wenn Anki Ihnen mitteilt, dass keine Plattform verfügbar ist, dann starten Sie
+Anki bitte mit dem folgenden Befehl:
 
 ```shell
 QT_DEBUG_PLUGINS=1 anki
 ```
 
-After installing the library with apt-get or similar, repeat the process. You
-may need to do this a few times before all required libraries are installed.
+Dies sollte Auskunft über eine fehlende Bibliotheksdatei geben.
+
+Nachdem Sie die fehlenden Bibliotheksdateien mit `apt-get` oder ähnlichem
+installiert haben, führen Sie den obigen Prozess erneut aus. Möglichweise müssen
+Sie dies einige Male wiederholen, bevor alle notwendigen Bibliotheksdateien
+installiert sind.

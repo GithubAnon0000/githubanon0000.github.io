@@ -1,13 +1,16 @@
-## Display Issues on Linux
+## Anzeigeprobleme unter Linux
 
-Hardware acceleration defaults to on. If you experience blank screens
-or display issues, you can try enabling software rendering using the terminal:
+Die Hardware Beschleunigung ist standardmäßig aktiviert. Sollten Sie Probleme
+wie leere Fenster oder andere Anzeigeprobleme feststellen, können Sie versuchen,
+Software-Rendering zu aktivieren. Öffnen Sie hierfür ein Terminalfenster und
+tippen Sie das folgende ein:
 
 ```
 echo software > ~/.local/share/Anki2/gldriver6
 ```
 
-If you wish to switch back to the default, change `software` to `auto`, or
-remove that file.
+Möchten Sie wieder zu dem Standardwert zurückwechseln, dann ändern Sie bitte
+`software` zu `auto` oder entfernen Sie die Datei.
 
-In Anki 23.10+, you can also change the graphics driver from preferences screen.
+In Anki 23.10+ können Sie die Grafikkartentreiber außerdem in den
+Einstellungen ändern.

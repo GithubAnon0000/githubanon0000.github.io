@@ -1,22 +1,25 @@
-# Packages Distributed by Linux Distributions
+# Durch Linux Distros verteilte Packete
 
-We have seen a lot of issues caused by the customized versions of Anki
-distributed by Linux distributions:
+Die Anki Versionen, die durch Linux Distros verteilt werden, sind teilweise
+modifiziert worden. Wir konnten einige Probleme feststellen, die auf diese
+Modifikationen zurückzuführen sind:
 
-- Anki depends on third-party libraries like Qt, and Linux distributions often
-  substitute different versions of those libraries, without testing the impact
-  of those changes.
-- Sometimes the version of Anki they distribute is years old, or is an
-  alpha/beta version not intended for stable release. Distributions will often
-  disable the built-in update check as well, to prevent you from being notified
-  of newer versions.
+- Anki ist von Drittanbieter-Bibliotheksdateien wie Qt abhängig. Linux Distros
+  ersetzen diese häufig mit anderen Versionen dieser Bibliotheksdateien, ohne
+  die Auswirkungen hiervon zu überprüfen.
+- Manchmal ist die Anki Version, die durch Linux Distros zur Verfügung gestellt
+  wird, mehrere Jahre alt oder es handelt sich um alpha/beta Versionen, die
+  nicht für die normale Nutzung gedacht sind. Außerdem wird oft die eingebaute
+  Überprüfung für Software-Aktualisierungen deaktiviert. Hierdurch werden Sie
+  nicht benachrichtigt, wenn neue Anki Versionen veröffentlicht werden.
 
-Compiled builds of Anki are available on <https://apps.ankiweb.net>. Most of the
-necessary libraries are included, and Anki has been tested to work with these
-library versions. If you're experiencing issues with your distro's version, the
-first thing you should try is switching to the latest packaged version we
-provide.
+Kompilierte Anki Versionen stehen unter <https://apps.ankiweb.net> zur
+Verfügung. Die meisten Bibliotheksdateien, die von Anki benötigt werden, sind in
+diesen bereits enthalten. Außerdem wurde Anki mit diesen Bibliotheksdateien
+getestet. Wenn Sie Probleme mit der Anki Version haben, die durch Linux Distros
+verteilt wird, dann sollten Sie zunächst überprüfen, ob die Probleme
+verschwinden, wenn Sie die aktuelle und offizielle Anki Version verwenden.
 
-You are welcome to continue using your distro's version of Anki if you prefer,
-but if you run into any issues, you will need to report them to your
-distribution's package maintainers.
+Sie können gerne die Anki Version weiterverwenden, die durch ihr Linux Distro
+verteilt wird. Sollten allerdings Probleme auftreten, müssten Sie diese Probleme
+an die Packetverwalter Ihres Distros melden.
