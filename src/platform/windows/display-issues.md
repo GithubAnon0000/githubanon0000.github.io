@@ -1,36 +1,42 @@
-# Windows display issues
+# Anzeigeprobleme unter Windows
 
 <!-- toc -->
 
-On Windows, there are three ways of content being displayed on screen. The
-default is _software_, which is slower, but the most compatible. There are two
-other options that are faster: _OpenGL_ and _ANGLE_. They are faster, but they
-may not work, or may cause display issues such as missing menubars, blank
-windows, and so on. Which one works best will depend on your computer.
+Unter Windows gibt es drei Möglichkeiten, Inhalte auf dem Bildschirm anzuzeigen.
+Der Standard ist _software_, was am langsamsten aber kompatibelsten ist. Die
+beiden anderen Optionen, _OpenGL_ und _ANGLE_, sind schneller. Allerdings
+funktionieren diese gegebenenfalls nicht oder es treten Anzeigeprobleme auf.
+Beispiele hierfür sind fehlende Menüleisten, leere Fenster und andere. Welche
+dieser Optionen bei Ihnen am besten funktioniert, ist von Ihrem Computer
+abhängig.
 
-If you run into display issues, you can try switching to software mode via cmd:
+Sollten Anzeigeprobleme auftreten, können Sie zu _software_ wechseln, indem Sie
+den nachfolgenden Befehl ausführen:
 
 ```bat
 echo software > %APPDATA%\Anki2\gldriver6
 ```
 
-Or you can do it via PowerShell:
+Oder Sie nutzen stattdessen PowerShell:
 
 ```powershell
 echo software > $env:APPDATA\Anki2\gldriver6
 ```
 
-It will not print anything. You can then start Anki again.
+Dies wird nichts anzeigen. Anschließend starten Sie Anki neu.
 
-To revert to the default behaviour, change `software` to `auto`, or delete that file.
+Um zum Standardverhalten zurück zu wechseln, ändern Sie `software` zu `auto`
+oder löschen Sie diese Datei.
 
-In Anki 23.10+, you can also change the graphics driver from preferences screen.
+In Anki 23.10+, können Sie die Grafikkartentreiber auch von den Einstellungen
+aus ändern.
 
-## Full screen
+## Vollbild
 
-Anki 2.1.50+ comes with a full screen mode, but due to various issues, it had to
-be disabled while `OpenGL` is used. Turning on software rendering as described
-above will allow the full screen option to be used, though please bear in mind
-that rendering performance may suffer.
+Anki 2.1.50+ enthält einen Vollbildmodus, welcher allerdings aufgrund von
+einigen Problemen deaktiviert werden musste, wenn `OpenGL` verwendet wird.
+Wird stattdessen `software` verwendet (wie oben beschrieben), dann kann die
+Vollbildfunktion verwendet werden. Beachten Sie jedoch, dass die
+Anzeigegeschwindigkeit dadurch leiden könnte.
 
-In Anki 23.10+, full screen mode is supported with the default Direct3D driver.
+In Anki 23.10+ wird Vollbild mit dem standard Direct3D Driver unterstützt.

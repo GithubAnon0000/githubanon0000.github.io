@@ -1,20 +1,24 @@
-# Windows startup issues
+# Startprobleme unter Windows
 
 <!-- toc -->
 
-## No error, but app does not appear
+## Kein Fehler, aber App erscheint nicht
 
-If you start Anki and it fails to appear, without
-any error message, you can try the following:
+Wenn Sie Anki starten, aber Anki nicht erscheint und keine Fehlernachricht
+angezeigt wird, dann können Sie das Nachfolgende versuchen:
 
-- Disconnect multiple/external displays.
-- Install the [latest Anki version](https://apps.ankiweb.net/).
-- Adjust [your decimal separator](https://forums.ankiweb.net/t/windows-update-broke-anki/1822/75), if it is not a period.
-- Install the old [2.1.35-alternate build](https://github.com/ankitects/anki/releases/tag/2.1.35) of Anki.
+- Mehrere/Externe Bildschirme entfernen.
+- Installieren Sie die [neueste Anki Version](https://apps.ankiweb.net/).
+- Ändern Sie [Ihr Dezimaltrennzeichen
+  ](https://forums.ankiweb.net/t/windows-update-broke-anki/1822/75), falls
+  dieser kein Punkt sein sollte.
+- Installieren Sie die alte [2.1.35-alternate Version
+  ](https://github.com/ankitects/anki/releases/tag/2.1.35) von Anki.
 
-## Windows updates
+## Windows Updates
 
-When starting Anki, you may receive a message like the following:
+Wenn Anki startet, erhalten Sie vielleicht eine Fehlernachricht wie die
+folgenden:
 
 - _Error loading Python DLL_
 - _The program can't start because api-ms-win.... is missing_
@@ -22,70 +26,86 @@ When starting Anki, you may receive a message like the following:
 - _Failed to execute script pyi_rth_multiprocessing_
 - _Failed to execute script pyi_rth_win32comgenpy_
 
-These errors are usually because your computer is missing a Windows update
-or Windows library.
+Diese Fehler treten für gewöhnlich auf, da Ihr Computer ein Windows Update
+benötigt oder Windows Bibliotheksdateien fehlen.
 
-Please open Windows update, and ensure your system has all updates installed.
-If any needed to be installed, please restart your device after installing.
+Öffnen Sie bitte Windowaktualisierung und gehen Sie sicher, dass Ihr System alle
+Aktualisierungen installiert hat. Sollten Aktualisierungen installiert worden
+sein, starten Sie ihr Gerät bitte neu.
 
 ## Windows 7/8
 
-On Windows 7/8, you may need to manually install extra updates. Please try:
+Unter Windows 7/8, müssen Sie vielleicht zusätzliche Aktualisierungen manuell
+vornehmen. Versuchen Sie bitte:
 
 - <https://www.microsoft.com/en-us/download/details.aspx?id=48234>
 - <https://aka.ms/vs/15/release/vc_redist.x64.exe>
 - <http://www.catalog.update.microsoft.com/Search.aspx?q=kb4474419>
 - <http://www.catalog.update.microsoft.com/Search.aspx?q=kb4490628>
 
-## Video driver issues
+## Video driver Probleme
 
-Please see [display issues](./display-issues.md).
+Lesen Sie bitte [Anzeigeprobleme](./display-issues.md).
 
-## Multiple displays
+## Mehrere Bildschirme
 
-If you get a _LoadLibrary failed with error 126_, this may be caused by the
-toolkit Anki is built on having trouble with [multiple displays](https://forums.ankiweb.net/t/error-126-on-open-anki-desktop/13967).
+Wenn Sie den Fehler _LoadLibrary failed with error 126_ erhalten, könnte das
+daran liegen, dass das Toolkit, welches Anki verwendet, Probleme mit [mehreren
+Bildschirmen](https://forums.ankiweb.net/t/error-126-on-open-anki-desktop/13967)
+hat.
 
-## Antivirus/firewall software
+## Antivirus/Firewall Programme
 
-Third-party software on your machine may prevent Anki from loading. You can
-try adding an exception for Anki, or temporarily disabling your antivirus/firewall
-to see if it helps.
+Drittanbieterprogramme können Anki daran hindern, ausgeführt zu werden. Sie
+können versuchen eine Ausnahme für Anki hinzuzufügen oder die Antivirus/Firewall
+vorübergehend zu deaktivieren.
 
-## Admin access
+## Administrator Zugang
 
-Some users have reported that Anki did not run for them until they right-clicked
-on the Anki icon and chose "Run as administrator". Anki stores all of its data in
-your user folder, and should not need administrator privileges, but it's something
-you can try if you've exhausted other options.
+Manche Nutzer haben berichtet, das Anki erst dann funktioniert hat, als sie
+einen Rechtsklick auf das Anki Icon ausgeführt haben und _Als Administrator
+ausführen_ ausgewählt haben. Anki speichert alle Daten in Ihrem Nutzerordner und
+sollte keine Administratorrechte benötigen, allerdings können Sie dies
+versuchen, wenn alles andere nicht funktioniert hat.
 
-## Multiple Anki installations present after updating
+## Mehrere Anki Installationen nach einer Aktualisierungen vorhanden
 
-If the update process leaves you with multiple Anki installs (such as within
-`C:\Program Files\Anki` and `C:\Program Files (x86)\Anki`), they may be left in a
-non-working state, and Anki may refuse to start without showing an error message.
+Sollten nach der Aktualisierung mehrere Anki Versionen installiert sein (z. B.
+in `C:\Program Files\Anki` und `C:\Program Files (x86)\Anki`), dann kann es
+sein, dass Anki deshalb nicht mehr startet und keine Fehlernachricht anzeigt.
 
-Try uninstalling all copies of Anki from your computer. To do this, find them in Windows Settings > Apps & features (or Apps > Installed apps) and uninstall, or run `uninstall.exe` in each Anki program
-folder. Afterward, install Anki again.
+Versuchen Sie, alle Kopien von Anki zu deinstallieren. Hierzu gehen Sie zu
+Windows Einstellungen > Anwendungen & features (oder Apps > Installierte
+Anwendungen) und and deinstallieren. Sie können auch `uninstall.exe` in jedem
+Anki Programmordner ausführen. Anschließend installieren Sie Anki erneut.
 
-## Debugging
+## Fehlersuche
 
-Starting Anki from a terminal may reveal a bit more information about some
-errors. After installing the latest Anki version and ensuring all Windows
-updates are installed, instead of running Anki directly, press the <kbd>Windows</kbd> key (or open the Start menu), type `cmd`, and launch Command Prompt. When the terminal window opens, paste the following command, and press <kbd>Enter</kbd>. (The path will be different if Anki is installed in a location that is not the default.)
+Anki vom Terminal aus zu starten, kann einige zusätzliche Informationen über
+Fehler offenlegen. Nachdem Sie die neueste Anki Version installiert haben und
+sichergestellt haben, dass alle Windowaktualisierungen installiert sind, drücken
+Sie die <kbd>Windows</kbd> Taste (oder öffnen Sie das Startmenü), tippen Sie
+`cmd` und führen Sie die Kommandozeile aus. Wenn das Terminalfenster erscheint,
+kopieren Sie den folgenden Befehl hinein und tippen Sie <kbd>Enter</kbd>
+(Der Pfad könnte anders sein, wenn Anki an einem Ort installiert worden ist, der
+nicht der Standardort ist).
 
 ```
 %LocalAppData%\Programs\Anki\anki-console.bat
 ```
 
-Presumably Anki will fail to open like before, but the output in the terminal window may reveal something about
-what is causing the problem.
+Vermutlich wird Anki weiterhin nicht starten, allerdings können nun wichtige
+Informationen im Terminalfenster erscheinen, die darüber Auskunft geben, was
+das Problem verursacht.
 
-## If all else fails
+## Wenn nichts funktioniert
 
-If you are unable to start Anki after trying the above workarounds, you have
-two remaining options:
+Sollten Sie Anki weiterhin nicht starten können, obwohl Sie die obigen Schritte
+zur Fehlerbehebung durchgeführt haben, haben Sie zwei weitere Optionen:
 
-- You can try [running from Python](https://faqs.ankiweb.net/running-from-python.html).
-- You can try an older Anki version built with an older toolkit, such as
-  [2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35), or [2.1.15](https://github.com/ankitects/anki/releases/tag/2.1.15).
+- Sie können Anki [mit Python ausführen
+  ](https://faqs.ankiweb.net/running-from-python.html).
+- Sie können eine ältere Anki Version versuchen, die ein älteres Toolkit
+  verwendet, wie beispielsweise [2.1.35-alternate
+  ](https://github.com/ankitects/anki/releases/tag/2.1.35) oder [2.1.15
+  ](https://github.com/ankitects/anki/releases/tag/2.1.15).

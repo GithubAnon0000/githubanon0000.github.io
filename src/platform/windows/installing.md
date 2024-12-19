@@ -1,57 +1,69 @@
-# Installing & Upgrading Anki on Windows
+# Installation & Aktualisierung von Anki unter Windows
 
 <!-- toc -->
 
-## Requirements
+## Voraussetzungen
 
-Recent Anki releases require a computer running the 64 bit version of Windows
-10 or 11.
+Neuere Anki Versionen erfordern einen Computer mit einer 64bit-Version von
+Windows 10 oder 11.
 
-- The last Anki release that supported Windows 7 and 8.1 was Anki 2.1.49.
-- The last Anki release that supported 32 bit Windows was [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35).
+- Die letzte Anki Version, die Windows 7 und 8.1 unterstützt hatte, war
+  Anki 2.1.49.
+- Die letzte Anki Version, die 32bit Windows unterstützt hatte, war [Anki
+  2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35).
 
-If you're on an old machine, you can obtain old releases from the [releases page](https://github.com/ankitects/anki/releases).
+Wenn Sie ein altes Gerät verwenden, können Sie alte Versionen von der
+[Veröffentlichungsseite](https://github.com/ankitects/anki/releases)
+herunterladen.
 
-## Installing
+## Installation
 
-To install Anki:
+Um Anki zu installieren:
 
-1. Download Anki from <https://apps.ankiweb.net>.
-2. Save the installer to your desktop or downloads folder.
-3. Double-click on the installer to run it. If you see an error
-   message, please see the [installation issues page](installation-issues.md).
-4. Once Anki is installed, double-click on the new star icon on your
-   desktop to start Anki.
+1. Laden Sie Anki von <https://apps.ankiweb.net> herunter.
+2. Speichern Sie das Installationsprogramm auf Ihren Desktop oder in Ihren
+   Downloads Ordner.
+3. Doppelklicken Sie auf das Installationsprogramm, um es auszuführen. Sollte
+   ein Fehler auftreten, lesen Sie bitte [Probleme bei der Installation
+   ](installation-issues.md).
+4. Wenn Anki installiert ist, doppelklicken Sie auf das neue Stern-Icon auf
+   Ihrem Desktop, um Anki zu starten.
 
-## Upgrading
+## Aktualisierung
 
-If upgrading from Anki 2.1.6+, there is no need to uninstall the previous
-version first. All you need to do is close Anki if it is open, and then follow
-the installation steps above. Your cards will be preserved when you upgrade.
+Sollten Sie von Anki 2.1.6+ aktualisieren, brauchen Sie die vorherige Version
+nicht deinstallieren. Schließen Sie lediglich Anki, sofern es offen ist, und
+folgen Sie die obigen Installationsanweisungen. Ihre Karten bleiben hierbei
+erhalten.
 
-If upgrading from an Anki version before 2.1.6, or switching from the standard
-to the alternate version or vice versa, we recommend uninstalling the old
-version first, which will remove Anki's program data, but not delete your card
-data.
+Sollten Sie von einer Anki Version vor 2.1.6 aktualisieren oder von der
+Standardversion zu einer alternativen Version wechseln (oder umgekehrt), dann
+ist es besser, wenn Sie die alte Version zunächst deinstallieren. Ankis
+Programdaten werden hierdurch gelöscht, die Kartendaten bleiben allerdings
+erhalten.
 
-If you wish to downgrade to a previous version, please make sure you
-[downgrade first](http://changes.ankiweb.net).
+Möchten Sie ein Downgrade zu einer älteren Version durchführen, folgenden Sie
+bitte den [Downgrade Anweisungen](http://changes.ankiweb.net).
 
-## Add-on Compatibility
 
-Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
+## Kompatibilität von Erweiterungen
 
-## Problems
+Manche Erweiterungen funktionieren nicht immer mit der neuesten Anki-Version.
+Wenn Sie Anki zur neuesten Version aktualisiert haben und eine für Sie
+essentielle Erweiterungen nicht mehr funktioniert, können Sie eine ältere
+Anki-Version von der [Veröffentlichungsseite
+](https://github.com/ankitects/anki/releases) herunterladen.
 
-If you encounter any issues when installing or starting Anki, please see the
-following pages:
-- [Installation Issues](installation-issues.md)
-- [Startup Issues](startup-issues.md)
-- [Display Issues](display-issues.md)
-- [Permission Problems](permission-problems.md)
+## Probleme
 
-If you encounter any interface issues when using Anki, please see the following pages:
-- [Copy and Paste Issues](copy-and-paste.md)
-- [Text Size Issues](text-size.md)
+Wenn bei der Installation oder beim Starten von Anki Probleme auftreten, lesen
+Sie bitte die folgenden Seiten:
+- [Installationsprobleme](installation-issues.md)
+- [Startprobleme](startup-issues.md)
+- [Anzeigeprobleme](display-issues.md)
+- [Probleme mit Berechtigungen](permission-problems.md)
+
+Sollten Sie Probleme mit der Benutzeroberfläche feststellen, lesen Sie bitte das
+Folgende:
+- [Probleme beim Kopieren und Einfügen](copy-and-paste.md)
+- [Probleme mit der Textgröße](text-size.md)

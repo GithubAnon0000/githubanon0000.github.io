@@ -1,38 +1,58 @@
-# Windows permission problems
+# Windows Probleme mit Berechtigungen
 
 <!-- toc -->
 
-## Permission Problems
+## Probleme mit Berechtigungen
 
-If you receive "access denied" messages, some of Anki's files may be set to read only mode, meaning Anki is not able to write to them.
+Sollten Sie "Zugriff verweigert" Nachrichten erhalten, könnte es sein, dass
+manche Dateien von Anki im Nur-Lese-Modus sind, was bedeutet, dass sie
+schreibgeschützt sind.
 
-To fix the problem, you can do the following:
+Um das zu lösen, können Sie das nachfolgende machen:
 
-- in the search area of the start bar, type cmd.exe and hit enter
-- in the window that opens, type the following and hit enter to see your username:
+- In der Suchleiste in der Startleiste von Windows, tippen Sie cmd.exe und
+  drücken Sie Enter.
+- In dem Fenster, dass sich öffnet, tippen Sie das folgende ein, um Ihren
+  Nutzernamen anzuzeigen:
 
+```
 whoami
+```
 
-- type the following, hitting enter after each line, and replacing ____ (and keeping the :F part) with your username from the previous command
+- Tippen Sie das folgende und drücken Sie Enter nach jeder Zeile un ersetzen Sie
+  ____ mit Ihrem Nutzernamen aus dem vorherigen Befehl. Der Teil mit _:F_ muss
+  beibehalten werden.
 
+```
 cd %APPDATA%
-
 icacls Anki2 /grant ____:F /t
+```
 
-That command should fix the permissions on Anki's data folder, and you should now be able to start the program.
+Dieser Befehl sollte die Berechtigungen für Ankis Datenordner korrigieren und
+Sie sollten Anki nun nutzen können.
 
 ## Antivirus/Firewall/Anti-Malware
 
-Some users have experienced "permission denied" or "readonly" errors that were caused by security software installed on their machine. You may need to add an exception for Anki, or try temporarily disabling the software to rule it out as the cause. Some users have reported that simply turning off their software did not fix the problem, and they either had to add an exception for Anki or uninstall the software.
+Manche Nutzer berichten von "Zugriff verweigert" oder "schreibgeschützt"
+Fehlern, die durch Sicherheitssoftware ausgelöst worden sind. Sie möchten
+vielleicht eine Ausnahme für Anki einrichten oder die Software vorübergehend
+deaktivieren, um diese Möglichkeit auszuschließen. Manche Nutzer haben
+berichtet, dass das Ausschalten dieser Software alleine nicht geholfen hat.
+Sie mussten dann Anki entweder auf eine Ausnahmeliste hinzufügen oder die
+Software deinstallieren.
 
-## Debugging Permission Problems
+## Fehlersuche bei Berechtigungsproblemen
 
-If problems persist after you've ruled out Antivirus and related programs, have performed the steps above to fix permissions, and don't use OneDrive, please run the following commands in cmd.exe, pressing enter after each one.
+Sollten die Probleme weiterhin bestehen, nachdem Sie die Antiviren- und
+verwandte Programme ausgeschlossen haben, und Sie die obigen Schritte zum
+Korrigieren der Berechtigungen durchgeführt haben und sollten Sie nicht OneDrive
+verwenden, dann führen Sie bitte die folgenden Befehle in cmd.exe aus und
+drücken Sie Enter nach jeder Zeile.
 
+```
 whoami
-
 cd %APPDATA%
-
 icacls Anki2 /t
-
-Then please copy & paste or screenshot what you see, and post it to us in a support ticket.
+```
+Kopieren Sie dann bitte was Sie sehen in die Zwischenablage und fügen Sie es in
+unserem Supportforum ein. Alternativ können Sie auch ein Bildschirmfoto machen.
