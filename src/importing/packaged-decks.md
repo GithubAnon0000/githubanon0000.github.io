@@ -1,9 +1,10 @@
-# Packaged Decks
+# Stapelpakete
 
 <!-- toc -->
 
-Anki packages (.apkg files) enable you to import decks, notes, note types, and cards from
-other users. They are commonly shared on [AnkiWeb](https://ankiweb.net/shared/decks).
+Anki Stapelpakete (.apkg Dateien) ermöglichen es Ihnen, Stapel, Notizen,
+Notiztypen und Karten von anderen Nutzern zu importieren. Für gewöhnlich werden
+diese unter [AnkiWeb](https://ankiweb.net/shared/decks) geteilt.
 
 ## Scheduling
 
