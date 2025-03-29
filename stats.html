@@ -33,6 +33,8 @@
         <link rel="stylesheet" href="css/misc.css">
         <link rel="stylesheet" href="css/kbd.css">
 
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -153,7 +155,7 @@
 <li><a href="#statistics">Statistics</a></li>
 <li><a href="#selecting-decks--collection">Selecting Decks / Collection</a>
 <ul>
-<li><a href="#deck">Deck.</a></li>
+<li><a href="#deck">Deck</a></li>
 <li><a href="#collection">Collection</a></li>
 <li><a href="#history">History</a></li>
 <li><a href="#more">More</a></li>
@@ -161,6 +163,7 @@
 </li>
 <li><a href="#today">Today</a></li>
 <li><a href="#the-graphs">The Graphs</a></li>
+<li><a href="#true-retention-table">True Retention Table</a></li>
 <li><a href="#manual-analysis">Manual Analysis</a></li>
 </ul>
 <h2 id="card-info"><a class="header" href="#card-info">Card Info</a></h2>
@@ -190,7 +193,7 @@ and the rating as 0.</p>
 top of the main window, or by pressing <kbd>T</kbd>.</p>
 <p><img src="media/Statistics.png" alt="Statistics screen" /></p>
 <h2 id="selecting-decks--collection"><a class="header" href="#selecting-decks--collection">Selecting Decks / Collection</a></h2>
-<h3 id="deck"><a class="header" href="#deck">Deck.</a></h3>
+<h3 id="deck"><a class="header" href="#deck">Deck</a></h3>
 <p>By default, the statistics window will show statistics from the currently selected deck and any
 subdecks it may contain, but you can select any deck from your collection by typing its name in the
 text box at the top of the screen or (from Anki 2.1.61), by using the deck selector at the bottom.</p>
@@ -222,14 +225,14 @@ accessible with a <kbd>Shift</kbd>-click on the Stats button.</p>
 <h2 id="today"><a class="header" href="#today">Today</a></h2>
 <p>At the top of the statistics window is a brief list of textual
 statistics about the reviews that you have completed today. A “review”
-in this context is 'one answering of a card', so a card might count as
+in this context is &quot;one answering of a card&quot;, so a card might count as
 multiple reviews if it needed to be seen multiple times, and a learning
 card answered also counts as a “review.” A couple of the stats whose
 meaning may not be immediately obvious:</p>
 <p><strong>Again Count</strong><br />
 This is the number of reviews that you have failed (i.e., pressed Again
 on). The correct percentage listed afterwards is the number of cards you
-did 'not' fail divided by the total number of cards you studied.</p>
+did &quot;not&quot; fail divided by the total number of cards you studied.</p>
 <p><strong>Learn, Review, Relearn, Filtered</strong><br />
 The number of reviews that were learning cards, review cards, relearning
 cards, or studied in a filtered deck when not due.</p>
@@ -253,8 +256,15 @@ Note that the forecast graph does not count reviews that are currently
 overdue, so if you have a large backlog, the overdue cards will not be
 displayed.</p>
 <p>Daily load is an estimate of the average number of cards to be reviewed daily.
-If you don't have a backlog, daily load should be approximately equal to 
+If you don't have a backlog, daily load should be approximately equal to
 your number of due cards.</p>
+<p>It is calculated as follows:
+\[\frac{1}{I_1} + \frac{1}{I_2} + \frac{1}{I_3} + \dots + \frac{1}{I_n}\]</p>
+<p>Here, \(I_n\) is the interval of
+the n-th card. If the interval is less than one day, the summation term is 1. This
+prevents cards with short intervals from unrealistically skewing the value of daily load.</p>
+<p>Example: you have a card with an interval of 10 days and a card with an interval of 50 days.
+Daily load = \(\frac{1}{10} + \frac{1}{50} = 0.12\), meaning that, <em>on average</em>, you will have 0.12 due cards per day.</p>
 <p><strong>Calendar</strong>
 This graph shows past card review activity. Hovering the mouse over a specific item
 allows you to view the number of revisions made that day. Click on a day of the
@@ -299,8 +309,8 @@ Only shown if FSRS is enabled. Difficulty determines how quickly a card's interv
 after each review.</p>
 <p><strong>Card Retrievability</strong><br />
 Only shown if FSRS is enabled. &quot;Retrievability&quot; is synonymous with &quot;probability of recall&quot;.</p>
-<p>Estimated total knowledge is the total number of cards you are likely to currently remember, 
-calculated by multiplying average retrievability by the number of cards that have been 
+<p>Estimated total knowledge is the total number of cards you are likely to currently remember,
+calculated by multiplying average retrievability by the number of cards that have been
 reviewed at least once.</p>
 <p><strong>Hourly Breakdown</strong><br />
 This graph shows what percentage of total reviews you have passed (i.e.,
@@ -313,6 +323,19 @@ This graph shows how many times you’ve chosen the Again, Hard, Good, or
 Easy button while studying learning/new, young, and
 <a href="getting-started.html#card-states">mature</a> cards. Anki also displays the percentage
 of correct reviews for each type of card.</p>
+<h2 id="true-retention-table"><a class="header" href="#true-retention-table">True Retention Table</a></h2>
+<p>This table shows your retention across different cards and different time frames.
+A card is defined as &quot;mature&quot; if its interval is ≥21 days. Only one review per day - the first one - counts.
+Again counts as &quot;Fail&quot;; Hard, Good, and Easy count as &quot;Pass&quot;.
+This table can be used to check how well <a href="https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html">Anki's spaced repetition algorithm</a> is working for you.</p>
+<p>If you are using FSRS, your true retention is expected to be close to your <a href="deck-options.html#desired-retention">desired retention</a>.
+Please keep in mind that data for a single day is noisy, so it's better to look at monthly data. If your true retention doesn't match your desired retention very well, here are some general recommendations:</p>
+<ol>
+<li>Optimize your FSRS parameters.</li>
+<li>Use different presets with their own parameters for different material.</li>
+<li>Suspend/reformulate <a href="leeches.html">leeches</a>.</li>
+<li>Make sure you are <a href="studying.html#answer-buttons">using the answer buttons as intended</a>.</li>
+</ol>
 <h2 id="manual-analysis"><a class="header" href="#manual-analysis">Manual Analysis</a></h2>
 <p>If you’re interested in getting information from your statistics other
 than what Anki provides, it is possible to access the data directly.
@@ -329,17 +352,17 @@ available for working with SQLite databases; one of the easiest to start
 with is called <a href="http://sqlitebrowser.org/">SQLite Browser</a>, which will
 allow you to look around the database as well as export a CSV version of
 tables for import into another program.</p>
-<p>The most important table for statistics is the 'revlog' table, which
+<p>The most important table for statistics is the &quot;revlog&quot; table, which
 stores an entry for each review that you conduct. The columns are as
 follows:</p>
 <p><strong>id</strong><br />
 The time at which the review was conducted, as the number of
 milliseconds that had passed since midnight UTC on January 1, 1970.
-(This is sometimes known as 'Unix epoch time', especially when in
+(This is sometimes known as &quot;Unix epoch time&quot;, especially when in
 straight seconds instead of milliseconds.)</p>
 <p><strong>cid</strong><br />
 The ID of the card that was reviewed. You can look up this value in the
-id field of the 'cards' table to get more information about the card,
+id field of the &quot;cards&quot; table to get more information about the card,
 although note that the card could have changed between when the revlog
 entry was recorded and when you are looking it up. It is also the
 millisecond timestamp of the card’s creation time.</p>

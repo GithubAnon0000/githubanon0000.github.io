@@ -34,6 +34,8 @@
         <link rel="stylesheet" href="css/misc.css">
         <link rel="stylesheet" href="css/kbd.css">
 
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -157,10 +159,10 @@
 <p>Volunteers have contributed translations of this manual. The
 translations may not always be up to date.</p>
 <ul>
-<li><a href="https://apps.ankiweb.net/docs/manual.id.html">Bahasa Indonesia</a></li>
+<li><a href="https://web.archive.org/web/20250228144632/https://apps.ankiweb.net/docs/manual.id.html">Bahasa Indonesia</a></li>
 <li><a href="https://web.archive.org/web/20240413080739/https://www.dennisproksch.de/anki">Deutsch</a></li>
-<li><a href="https://apps.ankiweb.net/docs/manual.es.html">Español</a></li>
-<li><a href="https://apps.ankiweb.net/docs/manual.fr.html">Français</a></li>
+<li><a href="https://web.archive.org/web/20250130154657/https://apps.ankiweb.net/docs/manual.es.html">Español</a></li>
+<li><a href="https://web.archive.org/web/20250209100830/https://apps.ankiweb.net/docs/manual.fr.html">Français</a></li>
 <li><a href="https://web.archive.org/web/20160423223801/http://192.167.9.6/Anki_ITA/Manual_ITA.htm">Italiano</a></li>
 <li><a href="https://platynowy.github.io/anki-manual/">Polski</a></li>
 <li><a href="https://mizerablebr.github.io/anki-manual/">Português Brasileiro</a></li>
@@ -386,17 +388,14 @@ following pages:</p>
 <p>Some error messages you may encounter when installing Anki:</p>
 <ul>
 <li><a href="platform/windows/installation-issues.html#error-opening-file-for-writing">&quot;Error opening file for writing&quot;</a></li>
-<li><a href="platform/windows/installation-issues.html#windows-protected-your-pc">&quot;Windows protected your PC&quot;</a></li>
+<li><a href="platform/windows/installation-issues.html#antivirus-issues">Antivirus issues</a></li>
 </ul>
 <p>Please also see <a href="platform/windows/./startup-issues.html">startup issues</a>.</p>
 <h2 id="error-opening-file-for-writing"><a class="header" href="#error-opening-file-for-writing">&quot;Error opening file for writing&quot;</a></h2>
 <p>If closing Anki and your browser does not help, please try restarting your
 computer, then running the installer again.</p>
-<h2 id="windows-protected-your-pc"><a class="header" href="#windows-protected-your-pc">&quot;Windows protected your PC&quot;</a></h2>
-<p>When a new Anki version is released, Windows may display a scary-looking message
-until it has seen enough people using the new version. To be able to proceed
-with app installation, please use <a href="https://www.tekrevue.com/tip/windows-protected-your-pc-disable-smartscreen/">Run anyway</a>.</p>
-<p>Antivirus programs may sometimes also report a <a href="https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html">false positive</a>.</p>
+<h2 id="antivirus-issues"><a class="header" href="#antivirus-issues">Antivirus issues</a></h2>
+<p>Antivirus programs may sometimes report a <a href="https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html">false positive</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="windows-startup-issues"><a class="header" href="#windows-startup-issues">Windows startup issues</a></h1>
 <ul>
 <li><a href="platform/windows/startup-issues.html#no-error-but-app-does-not-appear">No error, but app does not appear</a></li>
@@ -476,15 +475,22 @@ two remaining options:</p>
 <li>You can try an older Anki version built with an older toolkit, such as
 <a href="https://github.com/ankitects/anki/releases/tag/2.1.35">2.1.35-alternate</a>, or <a href="https://github.com/ankitects/anki/releases/tag/2.1.15">2.1.15</a>.</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="windows-display-issues"><a class="header" href="#windows-display-issues">Windows display issues</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="windows-display-issues"><a class="header" href="#windows-display-issues">Windows Display Issues</a></h1>
 <ul>
-<li><a href="platform/windows/display-issues.html#full-screen">Full screen</a></li>
+<li><a href="platform/windows/display-issues.html#changing-the-driver-from-the-preferences-screen">Changing the Driver From the Preferences Screen</a></li>
+<li><a href="platform/windows/display-issues.html#changing-the-driver-from-the-command-line">Changing the Driver From the Command Line</a></li>
+<li><a href="platform/windows/display-issues.html#full-screen">Full Screen</a></li>
 </ul>
 <p>On Windows, there are three ways of content being displayed on screen. The
 default is <em>software</em>, which is slower, but the most compatible. There are two
 other options that are faster: <em>OpenGL</em> and <em>ANGLE</em>. They are faster, but they
 may not work, or may cause display issues such as missing menubars, blank
 windows, and so on. Which one works best will depend on your computer.</p>
+<h2 id="changing-the-driver-from-the-preferences-screen"><a class="header" href="#changing-the-driver-from-the-preferences-screen">Changing the Driver From the Preferences Screen</a></h2>
+<p>In Anki 23.10+, you can change the graphics driver from preferences screen by
+navigating to <strong>Tools → Preferences</strong> and then selecting the driver from the
+dropdown menu.</p>
+<h2 id="changing-the-driver-from-the-command-line"><a class="header" href="#changing-the-driver-from-the-command-line">Changing the Driver From the Command Line</a></h2>
 <p>If you run into display issues, you can try switching to software mode via cmd:</p>
 <pre><code class="language-bat">echo software &gt; %APPDATA%\Anki2\gldriver6
 </code></pre>
@@ -493,8 +499,7 @@ windows, and so on. Which one works best will depend on your computer.</p>
 </code></pre>
 <p>It will not print anything. You can then start Anki again.</p>
 <p>To revert to the default behaviour, change <code>software</code> to <code>auto</code>, or delete that file.</p>
-<p>In Anki 23.10+, you can also change the graphics driver from preferences screen.</p>
-<h2 id="full-screen"><a class="header" href="#full-screen">Full screen</a></h2>
+<h2 id="full-screen"><a class="header" href="#full-screen">Full Screen</a></h2>
 <p>Anki 2.1.50+ comes with a full screen mode, but due to various issues, it had to
 be disabled while <code>OpenGL</code> is used. Turning on software rendering as described
 above will allow the full screen option to be used, though please bear in mind
@@ -523,7 +528,7 @@ the menu bar alone. Replace 1 with the desired scale, such as 1.5 or
 Anki. For example, create a file called startanki.bat on your desktop
 with the following text:</p>
 <pre><code>set ANKI_WEBSCALE=0.75
-start &quot;Anki&quot; &quot;C:\Program Files\Anki\anki&quot;
+start &quot;Anki&quot; &quot;%LocalAppData%\Programs\Anki\anki.exe&quot;
 </code></pre>
 <p>After saving, you can double click on the file to start Anki with that
 setting.</p>
@@ -573,8 +578,9 @@ setting.</p>
 <li><a href="platform/mac/installing.html#problems">Problems</a></li>
 </ul>
 <h2 id="requirements-1"><a class="header" href="#requirements-1">Requirements</a></h2>
-<p>Recent Anki releases require a Mac running macOS 10.13.4 or later.</p>
-<p>The last Anki release that supported macOS 10.10 to 10.13.3 was <a href="https://github.com/ankitects/anki/releases/tag/2.1.35">Anki 2.1.35-alternate</a>. If you're on an old machine, you can obtain the old version from the <a href="https://github.com/ankitects/anki/releases">releases page</a>.</p>
+<p>macOS version requirements are listed on the download page.</p>
+<p>If you're on an old machine, you can obtain the old version from the <a href="https://github.com/ankitects/anki/releases">releases page</a>. The Qt5 builds on 24.11 and earlier support macOS 10.14 and later. If your macOS
+is between 10.10 and 10.13, you'll need to use <a href="https://github.com/ankitects/anki/releases/tag/2.1.35">Anki 2.1.35-alternate</a>.</p>
 <h2 id="installing-1"><a class="header" href="#installing-1">Installing</a></h2>
 <ol>
 <li>Download Anki from <a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a>.</li>
@@ -601,13 +607,22 @@ you can download older Anki versions from the <a href="https://github.com/ankite
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="display-issues-on-macos"><a class="header" href="#display-issues-on-macos">Display Issues on macOS</a></h1>
 <ul>
-<li><a href="platform/mac/display-issues.html#qt6-video-driver">Qt6 Video Driver</a></li>
-<li><a href="platform/mac/display-issues.html#egpus">eGPUs</a></li>
-<li><a href="platform/mac/display-issues.html#monitors-with-different-resolutions">Monitors with different resolutions</a></li>
+<li><a href="platform/mac/display-issues.html#change-the-video-driver">Change the Video Driver</a>
+<ul>
+<li><a href="platform/mac/display-issues.html#changing-the-driver-from-the-preferences-screen">Changing the Driver From the Preferences Screen</a></li>
+<li><a href="platform/mac/display-issues.html#changing-the-driver-from-terminalapp">Changing the Driver From Terminal.app</a></li>
 </ul>
-<h2 id="qt6-video-driver"><a class="header" href="#qt6-video-driver">Qt6 Video Driver</a></h2>
+</li>
+<li><a href="platform/mac/display-issues.html#egpus">eGPUs</a></li>
+<li><a href="platform/mac/display-issues.html#monitors-with-different-resolutions">Monitors with Different Resolutions</a></li>
+</ul>
+<h2 id="change-the-video-driver"><a class="header" href="#change-the-video-driver">Change the Video Driver</a></h2>
+<h3 id="changing-the-driver-from-the-preferences-screen-1"><a class="header" href="#changing-the-driver-from-the-preferences-screen-1">Changing the Driver From the Preferences Screen</a></h3>
 <p>If you're experiencing display issues or crashes in Anki 23.10+, you can try
-changing the video driver in the preferences screen, then restarting Anki.</p>
+changing the video driver in the preferences screen by navigating to <strong>Anki →
+Preferences</strong> and then selecting the driver from the dropdown menu. After that it
+is necessary to restart Anki.</p>
+<h3 id="changing-the-driver-from-terminalapp"><a class="header" href="#changing-the-driver-from-terminalapp">Changing the Driver From Terminal.app</a></h3>
 <p>Older Anki versions did not provide an option in the preferences, but allowed
 you to adjust the driver by opening Terminal.app, then pasting the following and hit enter:</p>
 <pre><code>echo software &gt; ~/Library/Application\ Support/Anki2/gldriver6
@@ -617,7 +632,7 @@ you to adjust the driver by opening Terminal.app, then pasting the following and
 remove that file.</p>
 <h2 id="egpus"><a class="header" href="#egpus">eGPUs</a></h2>
 <p>If you experience blank screens when using an external graphics card on a Mac, you can ctrl+click on the Anki app, click &quot;Get Info&quot;, and enable the &quot;prefer eGPU&quot; option.</p>
-<h2 id="monitors-with-different-resolutions"><a class="header" href="#monitors-with-different-resolutions">Monitors with different resolutions</a></h2>
+<h2 id="monitors-with-different-resolutions"><a class="header" href="#monitors-with-different-resolutions">Monitors with Different Resolutions</a></h2>
 <p>Please see <a href="https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331">this forum post</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linux"><a class="header" href="#linux">Linux</a></h1>
 <h2 id="installing--upgrading-anki-on-linux"><a class="header" href="#installing--upgrading-anki-on-linux">Installing &amp; Upgrading Anki on Linux</a></h2>
@@ -661,7 +676,7 @@ sudo ./install.sh
 </code></pre>
 <p>On some Linux systems, you may need to use <code>tar xaf --use-compress-program=unzstd</code>.</p>
 <ol start="4">
-<li>You can then start Anki by typing 'anki' and hitting enter. If you encounter
+<li>You can then start Anki by typing <code>anki</code> and hitting enter. If you encounter
 any issues, please see the links on the left.</li>
 </ol>
 <h2 id="upgrading-2"><a class="header" href="#upgrading-2">Upgrading</a></h2>
@@ -700,12 +715,16 @@ following command line, which should reveal a missing library:</p>
 may need to do this a few times before all required libraries are installed.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="display-issues-on-linux"><a class="header" href="#display-issues-on-linux">Display Issues on Linux</a></h2>
 <p>Hardware acceleration defaults to on. If you experience blank screens
-or display issues, you can try enabling software rendering using the terminal:</p>
+or display issues, you can try enabling software rendering.</p>
+<h3 id="changing-the-driver-from-the-preferences-screen-2"><a class="header" href="#changing-the-driver-from-the-preferences-screen-2">Changing the Driver From the Preferences Screen</a></h3>
+<p>In Anki 23.10+, you can change the graphics driver from preferences screen by
+navigating to <strong>Tools → Preferences</strong> and then selecting the driver from the
+dropdown menu.</p>
+<h3 id="changing-the-driver-from-the-terminal"><a class="header" href="#changing-the-driver-from-the-terminal">Changing the Driver From the Terminal</a></h3>
 <pre><code>echo software &gt; ~/.local/share/Anki2/gldriver6
 </code></pre>
 <p>If you wish to switch back to the default, change <code>software</code> to <code>auto</code>, or
 remove that file.</p>
-<p>In Anki 23.10+, you can also change the graphics driver from preferences screen.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="blank-main-window"><a class="header" href="#blank-main-window">Blank Main Window</a></h1>
 <p>Some Linux distros have recently updated glibc. Recent versions break the web toolkit that Anki is built on, causing Anki's main window to appear blank.</p>
 <p>There are two ways to work around this:</p>
@@ -812,8 +831,6 @@ are the same.</p>
 <p><a href="http://www.youtube.com/watch?v=5tYObQ3ocrw&amp;yt:cc=on">Typing in the Answer</a></p>
 </li>
 </ul>
-<p>If YouTube is unavailable in your country, you can <a href="https://apps.ankiweb.net/downloads/archive/screencasts/2.0/">download the videos</a>
-instead.</p>
 <h2 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h2>
 <h3 id="cards"><a class="header" href="#cards">Cards</a></h3>
 <p>A question and answer pair is called a <em>card</em>. It's similar to a paper
@@ -1098,7 +1115,7 @@ When writing a post, please explain the problem you are having clearly, and in d
 <p>&quot;When I double-click on the Anki icon, an error message pops up. I tried
 searching for the error on Google, but couldn't find anything useful. I have
 copied and pasted the error message to the bottom of my post. I followed the
-steps on the 'When problems occur' page, but the error message does not go
+steps on the &quot;When problems occur&quot; page, but the error message does not go
 away. What should I do?&quot;</p>
 </blockquote>
 <p>This is a much better question. It tells us:</p>
@@ -1130,7 +1147,6 @@ instead.</p>
 <li><a href="studying.html#study-overview">Study Overview</a></li>
 <li><a href="studying.html#questions">Questions</a></li>
 <li><a href="studying.html#answer-buttons">Answer Buttons</a></li>
-<li><a href="studying.html#due-counts">Due Counts</a></li>
 <li><a href="studying.html#fuzz-factor">Fuzz Factor</a></li>
 <li><a href="studying.html#editing-and-more">Editing and More</a></li>
 <li><a href="studying.html#display-order">Display Order</a></li>
@@ -1146,7 +1162,7 @@ subdecks it contains.</p>
 <p>On the decks screen, your decks and subdecks will be displayed in a list. <a href="getting-started.html#card-states">New, Learn, and Due (To Review)</a>
 cards for that day will be also displayed here.</p>
 <p><img src="media/decks_screen.png" alt="Decks screen" /></p>
-<p>When you click on a deck, it will become the 'current deck', and Anki
+<p>When you click on a deck, it will become the &quot;current deck&quot;, and Anki
 will change to the study screen. You can return to the deck list at any time by clicking on “Decks” at
 the top of the main window. (You can also use the Study
 Deck action in the menu to select a new deck from the keyboard, or you
@@ -1155,7 +1171,7 @@ can press the <kbd>s</kbd> key to study the currently selected deck.)</p>
 delete the deck, change its <a href="deck-options.html">options</a>, or <a href="exporting.html">export</a> it.</p>
 <h2 id="study-overview"><a class="header" href="#study-overview">Study Overview</a></h2>
 <p>After clicking on a deck to study, you’ll see a screen that shows you
-how many cards are due today. This is called the 'deck overview' screen:</p>
+how many cards are due today. This is called the &quot;deck overview&quot; screen:</p>
 <p><img src="media/study_overview.png" alt="Study overview" /></p>
 <p>The cards are split into <a href="getting-started.html#card-states">three types</a>: New, Learning, and To Review.
 If you have <a href="studying.html#siblings-and-burying">Bury siblings</a> activated in your deck options, you
@@ -1175,7 +1191,7 @@ can’t answer within about 10 seconds, it’s probably better to move on
 and show the answer than keep struggling to remember.</p>
 <h2 id="answer-buttons"><a class="header" href="#answer-buttons">Answer Buttons</a></h2>
 <p>After the answer is shown, compare the answer you thought of
-with the answer which is shown and select any of the following button.</p>
+with the answer that is shown and select any of the following buttons.</p>
 <ul>
 <li>
 <p><strong>Again</strong>: Select this when your answer is incorrect or when you couldn't recall the answer. If your answer is partially correct, you should be strict with yourself: if it counts as a fail in a real-life context outside of Anki, then it counts as a fail in Anki as well. You'll typically use this button about 5-20% of the time.</p>
@@ -1195,13 +1211,7 @@ with the answer which is shown and select any of the following button.</p>
 </li>
 </ul>
 <p>If you find it hard to use four answer buttons, you can also use only <strong>Again</strong> and <strong>Good</strong> buttons. Use <strong>Again</strong> for incorrect answers and use <strong>Good</strong> for correct answers.</p>
-<p>Each answer button shows the next time a card will be reviewed again if you select that button. To learn about the settings that control the next review intervals, see the topics <a href="deck-options.html#new-cards">New Cards</a>, <a href="deck-options.html#lapses">Lapses</a> and <a href="deck-options.html#advanced">Advanced</a> in the Deck Options section.</p>
-<h2 id="due-counts"><a class="header" href="#due-counts">Due Counts</a></h2>
-<p>When only the question is shown, Anki shows three numbers like 6 + 9 + 59
-at the bottom of the screen. These represent the new cards (blue), cards in
-learning (red), and cards to review (green). If you’d prefer not to see the numbers,
-you can turn them off in Anki’s <a href="preferences.html">preferences.</a></p>
-<p><img src="media/due_counts.png" alt="Due Counts" /></p>
+<p>Each answer button shows the next time a card will be reviewed again if you select that button. To learn about the settings that control the next review intervals, see the topics <a href="deck-options.html#learning-steps">Learning Steps</a>, <a href="deck-options.html#lapses">Lapses</a>, <a href="deck-options.html#fsrs">FSRS</a> and <a href="deck-options.html#advanced">Advanced</a> in the Deck Options section.</p>
 <h2 id="fuzz-factor"><a class="header" href="#fuzz-factor">Fuzz Factor</a></h2>
 <p>When you select an answer button on a review card, Anki also applies a small amount of random “fuzz”
 to prevent cards that were introduced at the same time and given the same ratings
@@ -1319,9 +1329,9 @@ can change the order in the <a href="browsing.html">browser</a>.</p>
 <p>Recall from <a href="getting-started.html">the basics</a> that Anki can create more than one
 card for each thing you input, such as a front→back card and a
 back→front card, or two different cloze deletions from the same text.
-These related cards are called 'siblings'.</p>
+These related cards are called &quot;siblings&quot;.</p>
 <p>When you answer a card that has siblings, Anki can prevent the card’s
-siblings from being shown in the same session by automatically 'burying'
+siblings from being shown in the same session by automatically &quot;burying&quot;
 them. Buried cards are hidden from review until the clock rolls over to
 a new day or you manually unbury them using the “Unbury” button that’s
 visible at the bottom of the <a href="studying.html#study-overview">deck overview</a> screen. Anki
@@ -1346,7 +1356,7 @@ You can use the <kbd>1</kbd>-<kbd>4</kbd> keys to select a specific ease button.
 find it convenient to answer most cards with <kbd>Space</kbd> and keep one finger
 on <kbd>1</kbd> for when they forget.</p>
 <p>The &quot;Study Deck&quot; item in the Tools menu allows you to quickly switch to
-a deck with the keyboard. You can trigger it with the '/' key. When
+a deck with the keyboard. You can trigger it with the <kbd>/</kbd> key. When
 opened, it will display all of your decks and show a filter area at the
 top. As you type characters, Anki will display only decks matching the
 characters you type. You can add a space to separate multiple search
@@ -1390,12 +1400,19 @@ in that delay when determining the next time a card should be shown. This means 
 </ul>
 </li>
 <li><a href="editing.html#editing-io-notes">Editing IO notes</a></li>
-<li><a href="editing.html#inputting-foreign-characters-and-accents">Inputting Foreign Characters and Accents</a></li>
+<li><a href="editing.html#inputting-non-latin-characters-and-accents">Inputting Non-Latin Characters and Accents</a>
+<ul>
+<li><a href="editing.html#adding-international-keyboard-layouts">Adding international keyboard layouts</a></li>
+<li><a href="editing.html#adding-keyboard-layouts-for-specific-languages">Adding keyboard layouts for specific languages</a></li>
+<li><a href="editing.html#right-to-left-languages">Right-to-left Languages</a></li>
+<li><a href="editing.html#limitations">Limitations</a></li>
+</ul>
+</li>
 <li><a href="editing.html#unicode-normalization">Unicode Normalization</a></li>
 </ul>
 <h2 id="adding-cards-and-notes"><a class="header" href="#adding-cards-and-notes">Adding Cards and Notes</a></h2>
 <p>Recall from the <a href="getting-started.html">basics</a> that in Anki we add notes rather than
-cards, and Anki creates cards for us. Click 'Add' in the <a href="studying.html#decks">main window</a>,
+cards, and Anki creates cards for us. Click <strong>Add</strong> in the <a href="studying.html#decks">main window</a>,
 and the Add Notes window will appear.</p>
 <p><img src="media/add_screen.png" alt="Add Screen" /></p>
 <p>The top left of the window shows us the current <a href="getting-started.html#note-types">note type</a>. If it does
@@ -1404,7 +1421,7 @@ downloaded a shared deck. The text below assumes that &quot;Basic&quot; is
 selected.</p>
 <p>The top right of the window shows us the <a href="getting-started.html#decks">deck</a> cards will be added to. If
 you would like to add cards to a new deck, you can click on the deck name
-button and then click &quot;Add&quot;.</p>
+button and then click <strong>Add</strong>.</p>
 <p>Below the note type, you'll see some buttons, and an area labelled
 &quot;Front&quot; and &quot;Back&quot;. Front and Back are called <a href="getting-started.html#notes--fields">fields</a>, and you can add,
 remove, and rename them by clicking the &quot;Fields…​&quot; button above.</p>
@@ -1487,11 +1504,15 @@ a note, or while the note type is selected in the Manage Note Types
 window.</p>
 <p><img src="media/fields.png" alt="Fields" /></p>
 <p>You can add, remove, or rename fields by clicking the appropriate
-buttons. To change the order in which the fields appear in this dialog
+buttons.</p>
+<p>To change the order in which the fields appear in this dialog
 and the add notes dialog, you can use the reposition button, which asks
 for the numerical position you want the field to have. So if you want to
 change a field to be the new first field, enter &quot;1&quot;.</p>
-<p>Do not use 'Tags', 'Type', 'Deck', 'Card', or 'FrontSide' as field
+<p>Alternatively you can also drag and drop the field names to re-order them. To do
+that, use your mouse or finger to drag the field to the desired position. An indicator will
+show you where the field will be moved to.</p>
+<p>Do not use &quot;Tags&quot;, &quot;Type&quot;, &quot;Deck&quot;, &quot;Card&quot;, or &quot;FrontSide&quot; as field
 names, as they are <a href="templates/fields.html#special-fields">special fields</a> and will not work
 properly.</p>
 <p>The options at the bottom of the screen allow you to edit various
@@ -1502,7 +1523,7 @@ reviewing; for that, please see <a href="templates/intro.html">templates</a>.</p
 <li>
 <p><strong>Editing Font</strong> allows you to customize the font and size used when
 editing notes. This is useful if you want to make unimportant
-information smaller, or increase the size of foreign characters which
+information smaller, or increase the size of non-Latin characters which
 are hard to read. The changes you make here do not affect how cards
 appear when reviewing: to do that, please see the
 <a href="templates/intro.html">templates</a> section. If you have enabled the &quot;type in the
@@ -1642,7 +1663,7 @@ of the text, whether the selected text is bold, etc. The next three buttons allo
 <p>You can use the paper-clip button to select audio, images, and videos from
 your computer's hard drive and attach them to your notes. Alternatively, you
 can copy the media onto your computer's clipboard (for instance, by
-right-clicking an image on the web and choosing 'Copy Image') and paste
+right-clicking an image on the web and choosing &quot;Copy Image&quot;) and paste
 it into the field that you want to place it in. For more information
 about media, please see the <a href="media.html">media</a> section.</p>
 <p>The microphone icon allows you to record from your computer's microphone
@@ -1666,7 +1687,7 @@ hold down the <kbd>Shift</kbd> key while pasting, Anki will strip most of the
 formatting. Under Preferences, you can toggle &quot;Paste without shift
 key strips formatting&quot; to modify the default behaviour.</p>
 <h2 id="cloze-deletion"><a class="header" href="#cloze-deletion">Cloze Deletion</a></h2>
-<p>'Cloze deletion' is the process of hiding one or more words in a
+<p><em>Cloze deletion</em> is the process of hiding one or more words in a
 sentence. For example, if you have the sentence:</p>
 <pre><code>Canberra was founded in 1913.
 </code></pre>
@@ -1675,7 +1696,7 @@ become:</p>
 <pre><code>Canberra was founded in [...].
 </code></pre>
 <p>Sometimes sections that have been removed in this fashion are said to be
-'occluded'.</p>
+&quot;occluded&quot;.</p>
 <p>For more information on why you might want to use cloze deletion, see
 Rule 5 <a href="https://super-memory.com/articles/20rules.htm">here</a>.</p>
 <p>Anki provides a special cloze deletion type of note, to make creating
@@ -1728,6 +1749,10 @@ correctly, please see the section on <a href="templates/fields.html#checking-you
 Canberra [...] in 1913 -&gt; was founded
 </code></pre>
 <p>with the word &quot;was&quot; appearing in both deletions.</p>
+<p>The current implementation can only handle a limited amount of nesting. In Anki 24.11, it is 3 levels.
+In other versions, the limit is around 8, but Anki may become slow as you approach the limit. It is
+not possible to extend the limit. If you use this feature, it is recommended you limit yourself to a
+few levels of nesting.</p>
 <p>Prior to version 2.1.56, if you need to create clozes from overlapping text, add another Text
 field to your cloze, add it to the <a href="templates/intro.html">template</a>, and then when
 creating notes, paste the text into two separate fields, like so:</p>
@@ -1802,27 +1827,47 @@ two or more single shapes will create only one card once grouped.</li>
 </ul>
 <p>While reviewing IO Cards a &quot;Toggle Masks&quot; button will appear just below the image.
 This button will temporary clear all shapes of the note when using &quot;Hide All, Guess One&quot; mode.</p>
-<h2 id="inputting-foreign-characters-and-accents"><a class="header" href="#inputting-foreign-characters-and-accents">Inputting Foreign Characters and Accents</a></h2>
+<h2 id="inputting-non-latin-characters-and-accents"><a class="header" href="#inputting-non-latin-characters-and-accents">Inputting Non-Latin Characters and Accents</a></h2>
 <p>All modern computers have built-in support for typing accents and
-foreign characters, and multiple ways to go about it. The method we
+non-Latin characters, and multiple ways to go about it. The method we
 recommend is by using a keyboard layout for the language you want to learn.</p>
 <p>Languages with a separate script like Japanese, Chinese, Thai, and so on,
 have their own layouts specific to that language.</p>
 <p>European languages that use accents may have their own layout, but can
 often be typed on a generic &quot;international keyboard&quot; layout. These work
 by typing the accent, then the character you want accented - e.g. an
-apostrophe (') then the letter a (a) gives á.</p>
-<p>To add the international keyboard on Windows machines, please see
-<a href="https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/">https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/</a></p>
-<p>To add it on Macs, please see
-<a href="http://www.macworld.com/article/1147039/os-x/accentinput.html">http://www.macworld.com/article/1147039/os-x/accentinput.html</a></p>
-<p>Keyboards for a specific language are added in a similar way, but we can
+apostrophe (<kbd>´</kbd>) then the letter a (<kbd>a</kbd>) gives á.</p>
+<h3 id="adding-international-keyboard-layouts"><a class="header" href="#adding-international-keyboard-layouts">Adding international keyboard layouts</a></h3>
+<p>Instructions on how to use international keyboards vary depending on the operating
+system and desktop environment that you are using. To get started, please see the
+links below.</p>
+<p>Windows:</p>
+<ul>
+<li><a href="https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/">https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/</a></li>
+</ul>
+<p>Mac:</p>
+<ul>
+<li><a href="http://www.macworld.com/article/1147039/os-x/accentinput.html">http://www.macworld.com/article/1147039/os-x/accentinput.html</a></li>
+</ul>
+<p>Linux:</p>
+<ul>
+<li>Gnome: <a href="https://help.gnome.org/users/gnome-help/stable/tips-specialchars.html.en">https://help.gnome.org/users/gnome-help/stable/tips-specialchars.html.en</a></li>
+<li>KDE Plasma: <a href="https://userbase.kde.org/Tutorials/ComposeKey">https://userbase.kde.org/Tutorials/ComposeKey</a></li>
+</ul>
+<h3 id="adding-keyboard-layouts-for-specific-languages"><a class="header" href="#adding-keyboard-layouts-for-specific-languages">Adding keyboard layouts for specific languages</a></h3>
+<p>Keyboards for specific languages are added in a similar way, but we can
 not cover them all here. For more information, please try searching
-Google for &quot;input Japanese on a mac&quot;, &quot;type Chinese on Windows 10&quot;, and
+on the internet for &quot;input Japanese on a mac&quot;, &quot;type Chinese on Windows 10&quot;, and
 so on.</p>
+<p>For Linux it's best to look at the wiki pages of your distro, e.g.
+<a href="https://wiki.archlinux.org/title/Input_method">Arch Linux</a> and
+<a href="https://wiki.debian.org/Keyboard#Modern_strategy">Debian Linux</a>.
+As an example, <code>apt install ibus-anthy</code> on Debian allows you to type hiragana characters.</p>
+<h3 id="right-to-left-languages"><a class="header" href="#right-to-left-languages">Right-to-left Languages</a></h3>
 <p>If you are learning a right-to-left language, there are lots of other
-things to consider. Please see <a href="http://dotancohen.com/howto/rtl_right_to_left.html">this page</a> for more
-information.</p>
+things to consider. Please see <a href="http://dotancohen.com/howto/rtl_right_to_left.html">this page</a>
+for more information.</p>
+<h3 id="limitations"><a class="header" href="#limitations">Limitations</a></h3>
 <p>The toolkit on which Anki is built has trouble dealing with a few input
 methods, such as holding down keys to select accented characters on macOS,
 and typing characters by holding down the <kbd>Alt</kbd> key and typing a
@@ -1864,7 +1909,7 @@ cards at once.</p>
 </li>
 </ul>
 <h2 id="the-templates-screen"><a class="header" href="#the-templates-screen">The Templates Screen</a></h2>
-<p>You can modify card templates by clicking the &quot;Cards...&quot; button inside the
+<p>You can modify card templates by clicking the <strong>Cards...</strong> button inside the
 editing screen.</p>
 <p>You can switch between <strong>Front template</strong>, <strong>Back template</strong> and <strong>Styling</strong> with <kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>2</kbd>, and <kbd>Ctrl</kbd>+<kbd>3</kbd>.</p>
 <p>In Anki, templates are written in HTML, which is the language that web
@@ -1882,7 +1927,7 @@ options to rename or reorder the cards, as well as the following two
 options:</p>
 <ul>
 <li>
-<p>The 'Deck Override' option allows you to change the deck that cards
+<p>The <strong>Deck Override</strong> option allows you to change the deck that cards
 generated from the current card type will be placed into. By
 default, cards are placed into the deck you provide in the Add Notes
 window. If you set a deck here, that card type will be placed into
@@ -1894,7 +1939,7 @@ can check which deck the cards are currently going to by choosing
 Deck Override again.</p>
 </li>
 <li>
-<p>The 'Browser Appearance' option allows you to set different (perhaps
+<p>The <strong>Browser Appearance</strong> option allows you to set different (perhaps
 simplified) templates for display in the Question and Answer columns
 of the browser; see <a href="templates/styling.html#browser-appearance">browser appearance</a> for more
 information.</p>
@@ -1947,9 +1992,9 @@ you might create a front template like this:</p>
 </code></pre>
 <p>This means “show me the text that’s on the front side, then a divider
 line, and then the Back field”.</p>
-<p>The 'id=answer' part tells Anki where the divider is between the
+<p>The &quot;id=answer&quot; part tells Anki where the divider is between the
 question and the answer. This allows Anki to automatically scroll to the
-spot where the answer starts when you press 'show answer' on a long card
+spot where the answer starts when you press <strong>show answer</strong> on a long card
 (especially useful on mobile devices with small screens). If you don’t
 want a horizontal line at the beginning of the answer, you can use
 another HTML element such as a paragraph or div instead.</p>
@@ -2055,11 +2100,11 @@ fields on the back as well.</p>
 <code>{{Tags}}</code> rather than <code>{{tags}}</code> for example.</p>
 <h2 id="hint-fields"><a class="header" href="#hint-fields">Hint Fields</a></h2>
 <p>It’s possible to add a field to the front or back of a card, but make it
-hidden until you explicitly show it. We call this a 'hint field'. Before
+hidden until you explicitly show it. We call this a <em>hint field</em>. Before
 adding a hint, please bear in mind that the easier you make it to answer
 a question in Anki, the less likely you are to remember that question
 when you encounter it in real life. Please have a read about the
-'minimum information principle' on
+&quot;minimum information principle&quot; on
 <a href="https://super-memory.com/articles/20rules.htm">https://super-memory.com/articles/20rules.htm</a> before proceeding.</p>
 <p>First, you’ll need to add a field to store the hint in if you have not
 already. Please see the <a href="templates/../editing.html#customizing-fields">fields</a> section if you’re not sure how
@@ -2243,8 +2288,8 @@ of your styling section:</p>
 <pre><code>&lt;code id=typeans&gt;...&lt;/code&gt;
 </code></pre>
 <p>Advanced users can override the default type-answer colors with the css
-classes 'typeGood', 'typeBad' and 'typeMissed'. AnkiMobile supports
-'typeGood' and 'typeBad', but not 'typeMissed'.</p>
+classes &quot;typeGood&quot;, &quot;typeBad&quot; and &quot;typeMissed&quot;. AnkiMobile supports
+&quot;typeGood&quot; and &quot;typeBad&quot;, but not &quot;typeMissed&quot;.</p>
 <p>If you wish to override the size of the typing box and don’t want to
 change the font in the Fields dialog, you can override the default
 inline style using <code>!important</code>, like so:</p>
@@ -2286,7 +2331,7 @@ important material, or some of your cards don’t make sense reversed),
 you can select the “Basic (optional reversed card)” note type. This note
 type generates a forward-only card when you fill in only the first two
 fields; if you additionally enter something in the “Add Reverse” field
-(like a 'y'), Anki will generate a reverse card as well. The contents of
+(like a &quot;y&quot;), Anki will generate a reverse card as well. The contents of
 this field will never be displayed on a card.</p>
 <h2 id="card-generation--deletion"><a class="header" href="#card-generation--deletion">Card Generation &amp; Deletion</a></h2>
 <p>Anki will not create cards with empty front sides. Thus if “My Field”
@@ -2377,7 +2422,7 @@ replacements:</p>
 conditional replacement code on the <em>front</em> of the card; if you do this
 on the back, you will simply end up with cards with a blank back side.
 Similarly, since this works by checking if the front field would be
-empty, it is important to make sure you wrap the 'entire' front side in
+empty, it is important to make sure you wrap the &quot;entire&quot; front side in
 the conditional replacement; for instance, the following would not work
 as expected:</p>
 <pre><code>{{#Expression}}
@@ -2456,7 +2501,12 @@ could use the following template:</p>
 <li><a href="templates/styling.html#other-html">Other HTML</a></li>
 <li><a href="templates/styling.html#browser-appearance">Browser Appearance</a></li>
 <li><a href="templates/styling.html#platform-specific-css">Platform-Specific CSS</a></li>
-<li><a href="templates/styling.html#installing-fonts">Installing Fonts</a></li>
+<li><a href="templates/styling.html#installing-fonts">Installing Fonts</a>
+<ul>
+<li><a href="templates/styling.html#add-font-to-media-folder">Add Font to Media Folder</a></li>
+<li><a href="templates/styling.html#update-template-to-use-that-font">Update Template to Use That Font</a></li>
+</ul>
+</li>
 <li><a href="templates/styling.html#night-mode">Night Mode</a></li>
 <li><a href="templates/styling.html#fading-and-scrolling">Fading and Scrolling</a></li>
 <li><a href="templates/styling.html#javascript">Javascript</a></li>
@@ -2481,7 +2531,7 @@ at the end.</p>
 <p><strong>text-align</strong><br />
 Whether the text should be aligned in the center, left, or right.</p>
 <p><strong>color</strong><br />
-The color of the text. Simple color names like 'blue', 'lightyellow',
+The color of the text. Simple color names like &quot;blue&quot;, &quot;lightyellow&quot;,
 and so on will work, or you can use HTML color codes to select arbitrary
 colors. Please see <a href="https://htmlcolorcodes.com/">this webpage</a> for more
 information.</p>
@@ -2690,12 +2740,14 @@ font depending on where you’re reviewing:</p>
 particular browsers when using AnkiWeb. Please see
 <a href="http://rafael.adm.br/css_browser_selector/">http://rafael.adm.br/css_browser_selector/</a> for a full list of options.</p>
 <h2 id="installing-fonts"><a class="header" href="#installing-fonts">Installing Fonts</a></h2>
-<p>If you’re using Anki on a work or school computer where you don’t have
-permission to install new fonts, or you’re using Anki on a mobile
-device, it’s possible to add fonts directly to Anki.</p>
-<p>To add a font to Anki, it must be in the TrueType format. TrueType fonts
-have a filename ending in .ttf, such as &quot;Arial.ttf&quot;. Once you’ve located
-a TrueType font, we’ll need to add it to the media folder:</p>
+<p>You can install fonts directly to Anki. This is useful if you’re using Anki on
+a work or school computer where you don’t have permission to install new fonts,
+or if you’re using Anki on a mobile device.</p>
+<p>Anki supports the most widely used font formats, such as TrueType (.ttf),
+OpenType (.otf), Web Open Font Format (.woff) and others.</p>
+<h3 id="add-font-to-media-folder"><a class="header" href="#add-font-to-media-folder">Add Font to Media Folder</a></h3>
+<p>Once you have downloaded a supported font, such as &quot;Arial.ttf&quot;, you have to add
+it to the media folder.</p>
 <ol>
 <li>
 <p>Rename the file, adding an underscore at the start, so it becomes
@@ -2713,7 +2765,9 @@ renamed/added profiles).</p>
 Drag the renamed file to that folder.</p>
 </li>
 </ol>
-<p>After that, we need to update the template:</p>
+<h3 id="update-template-to-use-that-font"><a class="header" href="#update-template-to-use-that-font">Update Template to Use That Font</a></h3>
+<p>After the font has been added to the media folder, you need to update the
+template.</p>
 <ol>
 <li>
 <p>Click <strong>Add</strong> at the top of the main screen, and then select the
@@ -2751,7 +2805,7 @@ something like:</p>
   background-color: #555;
 }
 </code></pre>
-<p>If you have a 'myclass' style, the following would show the text in
+<p>If you have a &quot;myclass&quot; style, the following would show the text in
 yellow when night mode is enabled:</p>
 <pre><code class="language-css">.nightMode .myclass {
   color: yellow;
@@ -2882,7 +2936,7 @@ were using the card type as well.</p>
 <div id="no-field-replacement-on-front-side" />
 <p>Anki displays cards by combining the fields you've entered with a
 template that says which fields should appear on the front and back of your cards. If you receive a
-message that a card has a blank front, it means either none of the fields included on your front tmplate have any text in them, or you have fields that have text,
+message that a card has a blank front, it means either none of the fields included on your front template have any text in them, or you have fields that have text,
 but none are included on the front template.
 You can fix this problem by editing the card on the computer version, clicking on <strong>Cards...</strong>,
 and checking to make sure at least one field with some text on it is included on the front template.
@@ -2941,7 +2995,6 @@ correctly.</p>
 <ul>
 <li><a href="preferences.html#editing-1">Editing</a></li>
 <li><a href="preferences.html#browsing">Browsing</a></li>
-<li><a href="preferences.html#importexport">Import/Export</a></li>
 </ul>
 </li>
 <li><a href="preferences.html#syncing">Syncing</a>
@@ -3046,9 +3099,6 @@ Allows you to customize the starting search text in the browser (eg, to start
 with &quot;deck:current&quot;).</p>
 <p><strong>Ignore accents in search (slower)</strong><br />
 When enabled, simple text searches automatically <a href="./searching.html#ignoring-accentscombining-characters">ignore accents</a>.</p>
-<h3 id="importexport"><a class="header" href="#importexport">Import/Export</a></h3>
-<p><strong>Legacy import/export handling</strong><br />
-If enabled, legacy (pre 2.1.55) import / export code will be used. It is recommended to deactivate this option.</p>
 <h2 id="syncing"><a class="header" href="#syncing">Syncing</a></h2>
 <p>This tab contains options related to syncing with AnkiWeb.</p>
 <h3 id="synchronisation"><a class="header" href="#synchronisation">Synchronisation</a></h3>
@@ -3111,7 +3161,12 @@ with an older version that is on AnkiWeb.</p>
 </li>
 <li><a href="deck-options.html#burying">Burying</a></li>
 <li><a href="deck-options.html#audio">Audio</a></li>
-<li><a href="deck-options.html#timer">Timer</a></li>
+<li><a href="deck-options.html#timers">Timers</a>
+<ul>
+<li><a href="deck-options.html#internal-timer">Internal Timer</a></li>
+<li><a href="deck-options.html#on-screen-timer">On-screen Timer</a></li>
+</ul>
+</li>
 <li><a href="deck-options.html#auto-advance">Auto Advance</a></li>
 <li><a href="deck-options.html#easy-days">Easy Days</a></li>
 <li><a href="deck-options.html#fsrs">FSRS</a>
@@ -3177,7 +3232,6 @@ want to modify some of the options but keep the rest as they are.</li>
 a <a href="./syncing.html#conflicts">one-way sync</a>.</li>
 <li><strong>Save to All Subdecks</strong>: Like <strong>Save</strong>, but also assigns the selected preset to all
 subdecks of the currently selected deck.</li>
-<li><strong>Optimize All Presets</strong>: When FSRS is enabled, this allows you to optimize the parameters of all presets at once.</li>
 </ul>
 <p>Deck options are not retroactive. For example, if you change an option that
 controls the delay after failing a card, cards that you failed before
@@ -3286,9 +3340,9 @@ becomes a review card. The card is shown again after the delay configured by the
 </ul>
 <p>The <strong>Hard</strong> button works differently depending on which step you're on.</p>
 <ul>
-<li>When you're on the first step, the <strong>Hard</strong> button shows a delay of <code>6m</code>. The <code>6m</code> delay is the average of first two steps: <code>2m 10m</code>.
+<li>When you're on the first step, the <strong>Hard</strong> button shows a delay of <code>6m</code>. The <code>6m</code> delay is the average of first two steps: <code>1m</code> and <code>10m</code>.
 <ul>
-<li>Exception: When there's only one learning step, <strong>Hard</strong> button shows a delay 1.5 times that step. This delay is at most 1 day longer than the learning step.</li>
+<li>Exception: When there's only one learning step, the <strong>Hard</strong> button shows a delay 1.5 times that step. This delay is at most 1 day longer than the learning step.</li>
 </ul>
 </li>
 <li>When you're on any other step, the <strong>Hard</strong> button repeats that step.</li>
@@ -3432,8 +3486,8 @@ reduce the chances of forgetting more cards.</p>
 overdue cards are, and how long their interval is. For example, a card with a
 current interval of 5 days that is overdue by 2 days, will display before a card
 with a current interval of 10 days that is overdue by 3 days.</p>
-<p>When using FSRS, overdueness is calculated based on on each card's retrievability,
-and the desired retention in the deck preset.</p>
+<p>When FSRS is enabled, this sort order is removed; the FSRS equivalent is <strong>Ascending retrievability</strong>,
+which is calculated based on each card's retrievability (probability of recall) and the desired retention in the preset.</p>
 </li>
 </ul>
 <h2 id="burying"><a class="header" href="#burying">Burying</a></h2>
@@ -3460,23 +3514,28 @@ cards. If you turn on this option Anki will not play audio until you press the r
 the question side is played when you use replay action on the answer side. Note that, Anki <a href="./templates/fields.html#special-fields">does not automatically play</a> audio from the <code>{{FrontSide}}</code> field. This option does not influence the behaviour of automatic play.</p>
 </li>
 </ul>
-<h2 id="timer"><a class="header" href="#timer">Timer</a></h2>
+<h2 id="timers"><a class="header" href="#timers">Timers</a></h2>
+<p><a id="timer"></a></p>
 <p>Anki monitors how long it takes you to answer each card, so that it
 can show you how long was spent studying each day. The time taken does
 not influence scheduling.</p>
-<p>The options are:</p>
+<h3 id="internal-timer"><a class="header" href="#internal-timer">Internal Timer</a></h3>
 <ul>
 <li>Maximum answer seconds: The default limit is 60 seconds. If you take
 longer than that, Anki assumes you have walked away from your computer
-or have been distracted, and limits the recorded time to 60 seconds, so
-that you don’t end up with inaccurate statistics. If you consistently
-take longer than 60 seconds to answer a card (from when question is shown
-until you press an answer button), you may want to either consider raising
-this limit, or, ideally, making your cards simpler.</li>
-<li>Show answer timer: In the review screen, show a timer that counts the number
-of seconds you're taking to review each card.</li>
-<li>Stop timer on answer: whether the timer should keep running when you show
-the answer.</li>
+or have been distracted, and caps the recorded time at 60 seconds, so
+that you don’t end up with inaccurate statistics.</li>
+<li>This internal timer runs from when the question is shown until you press a button to grade your answer. If you consistently
+spend longer than 60 seconds on a card, 
+you may want to consider either raising
+this limit, or even better, making your cards simpler.</li>
+</ul>
+<h3 id="on-screen-timer"><a class="header" href="#on-screen-timer">On-screen Timer</a></h3>
+<ul>
+<li>Show on-screen timer: On the Study screen, show a timer that counts the time
+you're taking to study each card. (This timer will stop when it reaches the Maximum answer seconds set for the internal timer.)</li>
+<li>Stop on-screen timer on answer: Whether the on-screen timer should continue running from when you show
+the answer until you press a button to grade your answer. This option does not impact the time that is recorded for your statistics.</li>
 </ul>
 <h2 id="auto-advance"><a class="header" href="#auto-advance">Auto Advance</a></h2>
 <p>Requires Anki 23.12 or later. Auto Advance allows you to automatically take some actions after a certain amount of time has passed. To use it, you must first set a non-zero
@@ -3494,13 +3553,13 @@ SuperMemo 2 (SM-2) algorithm. By more accurately determining how much informatio
 to forget, it can help you remember more material in the same amount of time.</p>
 <p>When you turn on FSRS, some new options
 become available, and SM-2 specific options, such as <strong>Graduating interval</strong>,
-<strong>Easy bonus</strong>, etc. are hidden. This option is shared by all deck presets.</p>
+<strong>Easy bonus</strong>, etc. are hidden. This option is shared by all presets.</p>
 <p><strong>Before Enabling</strong></p>
 <ul>
 <li>Please ensure all of your Anki clients support FSRS. Anki 23.10, AnkiMobile 23.10,
 and AnkiWeb all support it. AnkiDroid supports it in 2.17+. If
 one of your clients doesn't support it, things will not work correctly.</li>
-<li>If you previously used the 'custom scheduling' version of FSRS, please make
+<li>If you previously used the &quot;custom scheduling&quot; version of FSRS, please make
 sure you clear out the custom scheduling section before enabling FSRS.</li>
 </ul>
 <h3 id="a-short-guide"><a class="header" href="#a-short-guide">A Short Guide</a></h3>
@@ -3545,13 +3604,12 @@ number, and recommend you keep it lower than <code>0.97</code> and higher than t
 <p>When you click the <strong>Optimize</strong> button, FSRS will analyze your review history, and generate parameters that are optimal for your memory and the content you're studying. If you have decks that vary wildly in subjective difficulty, it
 is recommended to assign them separate presets, as the parameters for easier
 decks will be different from harder decks. There is no need to optimize your
-parameters frequently: once every few months is sufficient.</p>
+parameters frequently: once every month is sufficient.</p>
 <p>By default, parameters are calculated from the review history of all
 decks using the current preset. You can optionally <a href="./searching.html">adjust the search</a>
 before optimizing the parameters, if you'd like to change which cards
 are used for optimization.</p>
-<p>You can also optimize the parameters for all of your presets at once, by clicking on the
-down arrow in the top right corner of the deck options window, then choosing <strong>Optimize All Presets</strong>.</p>
+<p>You can also optimize the parameters for all of your presets at once by clicking on <strong>Optimize All Presets</strong>.</p>
 <p><strong>Evaluate FSRS Parameters</strong></p>
 <p>You can use the <strong>Evaluate</strong> button to see metrics that show how well the parameters fit your review history. Smaller numbers
 indicate a better fit to your review history.</p>
@@ -3576,7 +3634,8 @@ either in reviews per day or in minutes of studying per day.</p>
 <li><strong>Days to simulate</strong> controls the duration of the simulated study history.</li>
 <li><strong>Additional new cards to simulate</strong> controls whether the simulator should 
 simulate more cards than this preset already has. For example, if you currently have 100 cards under this preset,
-and you set <strong>Additional new cards to simulate</strong> to 50, the simulator will simulate a total of 150 cards.</li>
+and you set <strong>Additional new cards to simulate</strong> to 50, the simulator will simulate a total of 150 cards.
+This can be useful if you plan to create more new cards in the future.</li>
 <li><strong>New cards/day</strong> and <strong>Maximum reviews/day</strong> control how many new cards will be learned each day and 
 the maximum number of reviews per day.</li>
 <li><strong>Maximum interval</strong> controls the maximum interval length (in days).</li>
@@ -3641,7 +3700,7 @@ interval would be around 13 days).</p>
 <h3 id="interval-modifier"><a class="header" href="#interval-modifier">Interval Modifier</a></h3>
 <p>An extra multiplier that is applied to all reviews. At its default of 1.00 it
 does nothing. If you set it to 0.80, intervals will be generated at
-80% of their normal size (so a 10 day interval would become 8 days). You can
+80% of their normal size (so a 10 day interval would become 8 days).
 You can thus use the multiplier to to make your reviews less or more frequent.</p>
 <p>For moderately difficult material, the average user should find they
 remember approximately 90% of mature cards when they come up for review. You
@@ -3691,7 +3750,36 @@ the <strong>New Interval</strong> to 0.20, the new interval would be 20 days.</p
 <p>While preserving part of the interval may seem to make sense, SuperMemo has observed
 that preserving part of the delay can actually <a href="https://supermemo.guru/wiki/Post-lapse_stability">be counter-productive</a>. For this reason, we recommend you leave it on the default setting.</p>
 <h3 id="custom-scheduling"><a class="header" href="#custom-scheduling">Custom Scheduling</a></h3>
-<p>Please see <a href="https://faqs.ankiweb.net/the-2021-scheduler.html#add-ons-and-custom-scheduling">this page</a>.</p>
+<p>You can have more control over Anki's scheduling of cards by using your own JavaScript in the custom scheduling field. This is a global option, so code entered here applies to every preset.</p>
+<p>Here is an example custom scheduling script. Note that, for Qt5 versions of Anki, the code needs to be transpiled.</p>
+<pre><code class="language-javascript">// print the existing states
+console.log(
+  JSON.stringify(states, null, 4)
+);
+
+// load the debugger if the web inspector is open
+debugger;
+
+// if the hard button is a learning step, make it
+// a 123 minute delay
+if (states.hard.normal?.learning) {
+  states.hard.normal.learning.scheduledSecs = 123 * 60;
+}
+
+// apply the same change in a rescheduling filtered deck
+if (states.hard.filtered?.rescheduling?.originalState?.learning) {
+  states.hard.filtered.rescheduling.originalState.learning.scheduledSecs =
+    123 * 60;
+}
+
+// increase ease factor by 0.2 when Easy used on a review
+if (states.good.normal?.review) {
+  states.easy.normal.review.easeFactor =
+    states.good.normal.review.easeFactor + 0.2;
+}
+</code></pre>
+<p>You can also see <a href="https://github.com/open-spaced-repetition/fsrs4anki/blob/main/fsrs4anki_scheduler.js">FSRS custom scheduling code</a> as an example.</p>
+<p>The various scheduling states of cards are described in <a href="https://github.com/ankitects/anki/blob/main/proto/anki/scheduler.proto">SchedulingStates</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="syncing-with-ankiweb"><a class="header" href="#syncing-with-ankiweb">Syncing with AnkiWeb</a></h1>
 <ul>
 <li><a href="syncing.html#intro-videos">Intro Videos</a></li>
@@ -3701,6 +3789,13 @@ that preserving part of the delay can actually <a href="https://supermemo.guru/w
 <li><a href="syncing.html#media">Media</a></li>
 <li><a href="syncing.html#conflicts">Conflicts</a></li>
 <li><a href="syncing.html#merging-conflicts">Merging Conflicts</a></li>
+<li><a href="syncing.html#ankiweb-data-deletion">AnkiWeb Data Deletion</a>
+<ul>
+<li><a href="syncing.html#what-gets-deleted">What Gets Deleted</a></li>
+<li><a href="syncing.html#returning-to-ankiweb">Returning to AnkiWeb</a></li>
+<li><a href="syncing.html#avoiding-data-deletion">Avoiding Data Deletion</a></li>
+</ul>
+</li>
 <li><a href="syncing.html#firewalls">Firewalls</a></li>
 <li><a href="syncing.html#proxies">Proxies</a></li>
 </ul>
@@ -3713,18 +3808,18 @@ below.</p>
 <a href="https://www.youtube.com/watch?v=YkiM4DPzSVc&amp;list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&amp;yt:cc=on">syncing intro videos</a>.</p>
 <h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
 <p>To start syncing your collection across devices, click the sync button
-(the top right one on the <a href="studying.html#decks">main screen</a>, or press 'y' on your keyboard.
+(the top right one on the <a href="studying.html#decks">main screen</a>, or press <kbd>Y</kbd> on your keyboard.
 You’ll be prompted for your AnkiWeb ID and password, which you created
 in the signup process.</p>
 <p>When you synchronize your collection for the first time, Anki will ask
 you if you want to upload or download. If you have cards on your
-computer and your AnkiWeb account is empty, choose &quot;upload&quot; to send your
+computer and your AnkiWeb account is empty, choose <strong>Upload</strong> to send your
 data to AnkiWeb. If you have cards on AnkiWeb from another device, and
-no cards on your computer, choose &quot;download&quot; to replace the empty local
+no cards on your computer, choose <strong>Download</strong> to replace the empty local
 collection with the cards that are on AnkiWeb. If you have different
 cards on both devices, <a href="syncing.html#merging-conflicts">more work is required</a> to
 avoid losing data.</p>
-<p>Once the initial one way sync is completed, Anki will be able to merge
+<p>Once the initial one-way sync is completed, Anki will be able to merge
 changes from multiple locations with a few exceptions.</p>
 <p>If you have multiple people using Anki on one machine and have created a
 profile for each user, each user will need to create their own AnkiWeb
@@ -3738,7 +3833,7 @@ manually, you can disable automatic syncing in Anki’s <a href="preferences.htm
 <p>The sync button will change to blue when a normal sync is required,
 and red when a full sync is required.</p>
 <h2 id="media"><a class="header" href="#media">Media</a></h2>
-<p>Related video: <a href="https://www.youtube.com/watch?v=phP9GGG-PxY">https://www.youtube.com/watch?v=phP9GGG-PxY</a></p>
+<p>You can watch a <a href="https://www.youtube.com/watch?v=phP9GGG-PxY">related video</a> on this topic.</p>
 <p>Anki will synchronize any sounds and images used by your notes. It will
 notice when media has been added, removed or replaced in your <a href="files.html#file-locations">media folder</a>, but
 will not notice if you have made edits to existing files. To get your edits synced, you
@@ -3755,7 +3850,7 @@ on AnkiWeb still.</p>
 file system, as Anki may not be able to detect media changes on a FAT32
 filesystem.</p>
 <h2 id="conflicts"><a class="header" href="#conflicts">Conflicts</a></h2>
-<p>Related video: <a href="https://www.youtube.com/watch?v=UEAcpfMQnjo">https://www.youtube.com/watch?v=UEAcpfMQnjo</a></p>
+<p>You can watch a <a href="https://www.youtube.com/watch?v=UEAcpfMQnjo">related video</a> on this topic.</p>
 <p>Under normal circumstances, reviews and note edits can be merged, so if
 you review or edit on two different devices before syncing, Anki will
 preserve your changes from both locations. If the same card has been
@@ -3769,17 +3864,17 @@ merged, Anki will warn you, and give you the option of aborting the
 operation. If you choose to continue, you’ll be asked to choose whether
 to keep the local copy or the copy on AnkiWeb when your collection is
 next synchronized.</p>
-<p>If certain problems are detected while syncing, it will also force a one
-way sync. If you find this consistently happens, please post on our
-support site.</p>
-<p>When a one way sync is required, you need to choose whether you wish to
+<p>If certain problems are detected while syncing, it will also force a 
+one-way sync. If you find this consistently happening, please post on our
+<a href="https://forums.ankiweb.net">support site</a>.</p>
+<p>When a one-way sync is required, you need to choose whether you wish to
 keep the collection on your local device, or the collection on AnkiWeb.
 If changes have been made on both ends, only changes on one end can be
 preserved.</p>
-<p>If you choose Upload, the content on your local device will be sent to
-AnkiWeb. You then need to sync your other devices, and choose &quot;Download&quot;
+<p>If you choose <strong>Upload</strong>, the content on your local device will be sent to
+AnkiWeb. You then need to sync your other devices, and choose <strong>Download</strong>
 to have them grab a copy of that content.</p>
-<p>If you choose Download, it will replace any local changes you’ve made
+<p>If you choose <strong>Download</strong>, it will replace any local changes you’ve made
 with the data that is on AnkiWeb.</p>
 <p>Once all devices are in sync, future syncs will return to the normal
 behaviour of merging changes from both ends.</p>
@@ -3787,12 +3882,12 @@ behaviour of merging changes from both ends.</p>
 accidentally deleted a deck on one side and want to restore the deck
 rather than having its deletion synchronized), you can check the &quot;On
 next sync, force changes in one direction&quot; box in
-Tools&gt;Preferences&gt;Network, then sync as usual. (You’ll be given
+<strong>Tools &gt; Preferences &gt; Network</strong>, then sync as usual. (You’ll be given
 the option to choose which side you want to use.)</p>
 <p>Forcing a one way sync only affects card syncing - media is synced as
 normal. If you have files that you want to remove from AnkiWeb, please
 ensure your client is fully in sync first. After syncing is up to date,
-any files you remove (e.g via the Check Media function) will be removed
+any files you remove (e.g. via the <strong>Check Media</strong> function) will be removed
 from AnkiWeb on the following sync.</p>
 <h2 id="merging-conflicts"><a class="header" href="#merging-conflicts">Merging Conflicts</a></h2>
 <p>Because the <a href="syncing.html#setup">first sync</a> can only sync changes in one
@@ -3801,12 +3896,12 @@ profiles before setting syncing up, content on one device will be lost
 if you overwrite it with the content from the other device. With some
 work, it is possible to manually merge data into a single collection.</p>
 <p>Start by taking a backup on each device/profile, in case something goes
-wrong. With the computer version you can use File&gt;Export to export
+wrong. With the computer version you can use <strong>File &gt; Export</strong> to export
 &quot;all decks&quot; with scheduling information and media files included, and
 save the file somewhere safe. In AnkiMobile, the Add/Export button on
 the decks list screen will let you export all decks with media.</p>
 <p>Next, if one of your devices is a mobile device, synchronize it first.
-If there’s a conflict, choose &quot;upload&quot; to overwrite any existing data on
+If there’s a conflict, choose <strong>Upload</strong> to overwrite any existing data on
 AnkiWeb with the data from your mobile device. If both devices/profiles
 are on your computer, synchronize the device/profile with the most
 number of decks first.</p>
@@ -3814,15 +3909,32 @@ number of decks first.</p>
 a message may pop up asking if you want to upload or download. Click the
 cancel button - we don’t want to sync yet.</p>
 <p>Once you’re looking at the deck list, click the cog icon next to the
-first deck, and choose &quot;export&quot;. Export the content with scheduling
-information and media included, and save the .apkg file somewhere. Now
+first deck, and choose <strong>Export</strong>. Export the content with scheduling
+information and media included, and save the <code>.apkg</code> file somewhere. Now
 you’ll need to repeat this for each top-level deck.</p>
 <p>Once all top-level decks have been exported, click the sync button at
-the top right, and choose &quot;download&quot;, which will overwrite the local
+the top right, and choose <strong>Download</strong>, which will overwrite the local
 content with the content you synced from your other device.</p>
-<p>You can now use File&gt;Import to import the .apkg files you exported
+<p>You can now use <strong>File &gt; Import</strong> to import the <code>.apkg</code> files you exported
 earlier, which will merge the exported content with the existing
 content, so everything will be in one place.</p>
+<h2 id="ankiweb-data-deletion"><a class="header" href="#ankiweb-data-deletion">AnkiWeb Data Deletion</a></h2>
+<p>As AnkiWeb is a free service, we need to periodically delete unused account data 
+to keep costs down. If you haven't accessed your account or synced in the last 6 months,
+the data on your account might get deleted.</p>
+<h3 id="what-gets-deleted"><a class="header" href="#what-gets-deleted">What Gets Deleted</a></h3>
+<p>Only the AnkiWeb copy of your data is deleted. The account itself doesn't get deleted and can be used again. 
+Also, any cards you have stored on your computer, phone or tablet will remain on those devices.</p>
+<h3 id="returning-to-ankiweb"><a class="header" href="#returning-to-ankiweb">Returning to AnkiWeb</a></h3>
+<p>Once your deck data has expired, it is not possible for us to recover your data from AnkiWeb,
+but you may be able to recover it if you have a local copy or a <a href="./backups.html">backup</a>.</p>
+<h3 id="avoiding-data-deletion"><a class="header" href="#avoiding-data-deletion">Avoiding Data Deletion</a></h3>
+<p>Each time you visit ankiweb.net, or use the synchronization feature in Anki, AnkiMobile or AnkiDroid,
+your account will automatically be marked as active.</p>
+<p>If your account has been inactive for 6 months or more, and you used the service for a week or longer,
+we will send you an email notifying you that deletion is pending. 
+If you'd like to keep your account active, please log in to ankiweb.net
+and study a card, or sync one of your devices within 30 days.</p>
 <h2 id="firewalls"><a class="header" href="#firewalls">Firewalls</a></h2>
 <p>Anki needs to be able to make outbound HTTPS connections to sync. It must be
 able to connect to ankiweb.net, sync.ankiweb.net, sync2.ankiweb.net, and so on.
@@ -4183,8 +4295,8 @@ limit of new cards. This is generally useful, as it ensures you don't
 spend more time studying than necessary. But sometimes it can be useful
 to step outside of these normal limits, such as when you need to review
 for a test, focus on particular material, and so on. To make this
-possible, Anki provides a different type of deck called a 'filtered
-deck'.</p>
+possible, Anki provides a different type of deck called a &quot;filtered
+deck&quot;.</p>
 <p>Filtered decks offer a lot of possibilities. They can be used for
 previewing cards, cramming cards before a test, studying particular
 tags, catching up on a backlog with a particular sort order, reviewing
@@ -4201,7 +4313,7 @@ you can rename it from the deck list.</p>
 <p>Here is a summary of each of the options:</p>
 <p><strong>Increase today's new card limit</strong><br />
 Add more new cards to the deck you are currently studying. Note that
-unlike other options, this does 'not' create a new filtered deck, it
+unlike other options, this does &quot;not&quot; create a new filtered deck, it
 modifies the existing deck.</p>
 <p><strong>Increase today's review card limit</strong><br />
 If not all reviews due today were shown because of the daily review limit,
@@ -4228,8 +4340,8 @@ a big test), you can set the number of cards to more than the number of
 cards in the deck.</p>
 <h2 id="home-decks"><a class="header" href="#home-decks">Home Decks</a></h2>
 <p>When a card is moved to a filtered deck, it retains a link to the deck,
-from which it came. That previous deck is said to be the card's 'home
-deck'.</p>
+from which it came. That previous deck is said to be the card's &quot;home
+deck&quot;.</p>
 <p>Cards automatically return to their home deck after they are studied in
 the filtered deck. This can be after a single review, or after multiple
 reviews, depending on your settings.</p>
@@ -4249,7 +4361,7 @@ deleted when you delete a filtered deck.</p>
 </ul>
 <h2 id="creating-manually"><a class="header" href="#creating-manually">Creating Manually</a></h2>
 <p>Advanced users can create filtered decks with arbitrary search strings
-(or 'filters'),
+(or &quot;filters&quot;),
 instead of relying on the preset filters. To create a filtered deck manually,
 choose Create Filtered Deck from the Tools menu.</p>
 <p>When you click the Build button, Anki finds cards that match the
@@ -4299,7 +4411,7 @@ creation date).</p>
 Display cards with the earliest due date first.</p>
 <p><strong>Latest added first</strong><br />
 Display cards that you have most recently added to the deck first.
-(This is the opposite of 'Order added'.)</p>
+(This is the opposite of &quot;Order added&quot;.)</p>
 <p><strong>Relative overdueness</strong><br />
 Display cards that you're most likely to have forgotten first. This is useful if
 you have a large backlog that may take some time to get through, and you want to
@@ -4402,6 +4514,7 @@ day like you would for new cards. Up to you.
 </ul>
 </li>
 <li><a href="searching.html#object-ids">Object IDs</a></li>
+<li><a href="searching.html#custom-data">Custom Data</a></li>
 <li><a href="searching.html#other-searches">Other Searches</a></li>
 </ul>
 <p>Anki's Browse screen and the Filtered Deck feature use a common method
@@ -4499,7 +4612,7 @@ finds notes where the Front field contains dog somewhere.</p>
 <p><code>front:</code><br />
 finds notes that have an empty Front field.</p>
 <p><code>front:_*</code><br />
-findd notes that have a non-empty Front field.</p>
+finds notes that have a non-empty Front field.</p>
 <p><code>front:*</code><br />
 finds notes that have a Front field, empty or not.</p>
 <p><code>fr*:text</code><br />
@@ -4624,7 +4737,7 @@ cards due yesterday that haven’t been answered yet.</p>
 all cards due in the future, including tomorrow.</p>
 <p><code>prop:due&lt;=-1</code><br />
 all  overdue cards.</p>
-<p><code>prop:due&gt;-1 prop:due&lt;1</code><br />
+<p><code>prop:due&gt;=-1 prop:due&lt;=1</code><br />
 cards due yesterday, today and tomorrow.</p>
 <p><code>prop:reps&lt;10</code><br />
 cards that have been answered less than 10 times.</p>
@@ -4632,10 +4745,6 @@ cards that have been answered less than 10 times.</p>
 cards that been lapsed more than 3 times.</p>
 <p><code>prop:ease!=2.5</code><br />
 cards easier or harder than default ease.</p>
-<p><code>prop:cdn:d&gt;5</code><br />
-cards with the value of <code>d</code> in custom data (usually refers to difficulty in FSRS) greater than 5 (requires Anki 2.1.64+).</p>
-<p><code>prop:cds:v=reschedule</code><br />
-cards with the string <code>v</code> in custom data equal to <code>reschedule</code> (requires Anki 23.10+).</p>
 <p>The following searches require Anki 23.10+ and FSRS enabled:</p>
 <p><code>prop:s&gt;21</code><br />
 cards with stability greater than 21 days.</p>
@@ -4666,6 +4775,13 @@ cards answered Again (1) in the last 7 days.</p>
 <p><code>rated:31:4</code><br />
 cards answered Easy (4) in the last 31 days.</p>
 <p>Anki 2.1.39+ supports rating searches over 31 days.</p>
+<p>Note that, to search for cards answered at a particular day, <code>rated:n -rated:(n-1)</code> might not work every time. Use the following instead:</p>
+<p><code>prop:rated=0</code><br />
+cards answered today.</p>
+<p><code>prop:rated=-1</code><br />
+cards answered one day ago.</p>
+<p><code>prop:rated=-7</code><br />
+cards answered 7 days ago.</p>
 <h3 id="first-answered"><a class="header" href="#first-answered">First Answered</a></h3>
 <p>Requires Anki 2.1.45+.</p>
 <p><code>introduced:1</code><br />
@@ -4750,9 +4866,20 @@ all cards with card ids 123, 456, or 789.</p>
 <p>Note and card IDs can be found in the <a href="stats.html">card info</a> dialog in the
 browser. These searches may also be helpful when doing add-on
 development or otherwise working closely with the database.</p>
+<h2 id="custom-data"><a class="header" href="#custom-data">Custom Data</a></h2>
+<p>Anki allows small amounts of custom data to be stored on cards, enabling
+advanced use cases such as custom schedulers. One of the notable applications
+of this feature was in earlier implementations of FSRS. In Anki 23.10+, there
+are some ways to search it:</p>
+<p><code>has-cd:v</code><br />
+cards having the property <code>v</code> in custom data.</p>
+<p><code>prop:cdn:d&gt;5</code><br />
+cards with the value of <code>d</code> in custom data (usually refers to difficulty in FSRS) greater than 5.</p>
+<p><code>prop:cds:v=reschedule</code><br />
+cards with the string <code>v</code> in custom data equal to <code>reschedule</code>.</p>
 <h2 id="other-searches"><a class="header" href="#other-searches">Other Searches</a></h2>
 <p><code>prop:due=1 is:learn</code><br />
-interday learning cards due for tommorow.</p>
+interday learning cards due for tomorrow.</p>
 <p><code>prop:due=0 is:learn -introduced:1</code><br />
 interday learning cards due today.</p>
 <p><code>prop:resched=0</code><br />
@@ -4767,7 +4894,6 @@ file, click the File menu and then &quot;Import&quot;.</p>
 <li><a href="importing/text-files.html#html">HTML</a></li>
 <li><a href="importing/text-files.html#importing-media">Importing Media</a></li>
 <li><a href="importing/text-files.html#bulk-media">Bulk Media</a></li>
-<li><a href="importing/text-files.html#adding-tags">Adding Tags</a></li>
 <li><a href="importing/text-files.html#duplicates-and-updating">Duplicates and Updating</a></li>
 <li><a href="importing/text-files.html#file-headers">File Headers</a>
 <ul>
@@ -4790,11 +4916,6 @@ file first.</p>
 <p>The files must be in UTF-8 format (see below).</p>
 </li>
 <li>
-<p>The first line also defines the separating character – if Anki finds
-a ';' on the first line it will use that, if it finds a comma it’ll
-use that, etc.</p>
-</li>
-<li>
 <p>Anki determines the number of fields in the file by looking at the first
 (non-commented) line. If some of the later records in the file contain fewer
 fields, Anki will treat the missing fields as if they were blank. If some of your
@@ -4810,7 +4931,7 @@ or more of your templates, the cards will go to that deck rather than
 the one you’ve selected.</p>
 <p>This is an example of a valid file with three fields:</p>
 <pre><code>apple;banana;grape
-some text;other text;yet more text
+first field;second field;third field
 </code></pre>
 <p>There are two ways to include newlines or the field separator in fields.</p>
 <p><strong>Escape the characters by placing the contents of the field in
@@ -4832,7 +4953,7 @@ file for you, it will automatically take care of escaping double quotes.</p>
 <pre><code>hello; this is&lt;br&gt;a two line answer
 two; this is a one line one
 </code></pre>
-<p>You need to turn on the &quot;allow HTML in fields&quot; checkbox in the import
+<p>You need to turn on the <strong>Allow HTML in fields</strong> in the import
 dialog for HTML newlines to work.</p>
 <p>Escaped multi-lines will not work correctly if you are using cloze
 deletions that span multiple lines. In this case, please use HTML
@@ -4848,14 +4969,14 @@ field1;field2;field3
 </code></pre>
 <h2 id="spreadsheets-and-utf-8"><a class="header" href="#spreadsheets-and-utf-8">Spreadsheets and UTF-8</a></h2>
 <p>If you have non-Latin characters in your file (such as accents, Japanese
-and so on), Anki expects files to be saved in a 'UTF-8 encoding'. The
+and so on), Anki expects files to be saved in a &quot;UTF-8 encoding&quot;. The
 easiest way to do this is to use the free LibreOffice spreadsheet
 program instead of Excel to edit your file, as it supports UTF-8 easily,
 and also exports multi-line content properly, unlike Excel. If you wish
-to keep using Excel, please see <a href="https://docs.google.com/document/d/12YE_FS6A9ANLTESJNtPP116ti4nNmCBghyoJBRtno_k/edit?usp=sharing">this forum post</a>
+to keep using Excel, please see <a href="https://docs.google.com/document/d/12YE_FS6A9ANLTESJNtPP116ti4nNmCBghyoJBRtno_k/edit?usp=sharing">this doc</a>
 for more information.</p>
 <p>To save your spreadsheet to a file Anki can read with LibreOffice, go to
-File&gt;Save As, and then select CSV for the type of file. After
+<strong>File &gt; Save As</strong>, and then select CSV for the type of file. After
 accepting the default options, LibreOffice will save the file and you
 can then import the saved file into Anki.</p>
 <h2 id="html"><a class="header" href="#html">HTML</a></h2>
@@ -4889,7 +5010,7 @@ file as follows.</p>
 in the browse screen to update all the fields at once. If each field
 contains text like &quot;myaudio&quot;, and you wish to make it play a sound,
 you’d search for (.*) and replace it with &quot;[sound:\1.mp3]&quot;, with the
-'regular expressions' option enabled.</p>
+<strong>regular expressions</strong> option enabled.</p>
 <p>When importing a text file with these references, you must make sure to
 enable the &quot;Allow HTML&quot; option.</p>
 <p>You might be tempted to do this in a template, like:</p>
@@ -4904,14 +5025,9 @@ instead.</p>
 the <a href="https://ankiweb.net/shared/info/129299120">media import add-on</a>.
 This add-on will automatically create notes for all files in a folder
 you select, with the filenames on the front (minus the file extension,
-so if you have a file named apple.jpg, the front would say 'apple') and
+so if you have a file named apple.jpg, the front would say &quot;apple&quot;) and
 the images or audio on the back. If you would like a different
 arrangement of media and filenames, you can <a href="importing/../browsing.html">change the note type</a> of the created cards afterwards.</p>
-<h2 id="adding-tags"><a class="header" href="#adding-tags">Adding Tags</a></h2>
-<p>If you want to add 'tag1' and 'tag2' to every line you’re importing, add
-the following to the top of the text file:</p>
-<pre><code>tags:tag1 tag2
-</code></pre>
 <h2 id="duplicates-and-updating"><a class="header" href="#duplicates-and-updating">Duplicates and Updating</a></h2>
 <p>When importing text files, Anki uses the first field to determine if a
 note is unique. By default, if the file you are importing has a first
@@ -4921,9 +5037,9 @@ existing note’s other fields will be updated based on content of the
 imported file. A drop-down box in the import screen allows you to change
 this behaviour, to either ignore duplicates completely, or import them
 as new notes instead of updating existing ones.</p>
-<p>The 'match scope' setting controls how duplicates are identified. When
-'note type' is selected, Anki will identify a duplicate if another note
-with the same note type has the same first field. When set to 'note type and deck',
+<p>The <strong>match scope</strong> setting controls how duplicates are identified. When
+<strong>note type</strong> is selected, Anki will identify a duplicate if another note
+with the same note type has the same first field. When set to <strong>note type and deck</strong>,
 a duplicate will only be flagged if the existing note also happens to be
 in the deck you are importing into.</p>
 <p>If you have updating turned on and older versions of the notes you’re
@@ -4936,15 +5052,11 @@ scheduling information on all their cards will be preserved.</p>
 <h2 id="file-headers"><a class="header" href="#file-headers">File Headers</a></h2>
 <p>Anki 2.1.54+ supports certain headers that can be included in the text file to
 make importing more powerful or convenient. They consist of <code>#key:value</code> pairs
-and must be listed in separate lines at the top of the file, though the <a href="importing/text-files.html#adding-tags">tags line</a>
-may precede them. Since header lines start with the comment character <code>#</code>, earlier
-Anki clients will just ignore them.</p>
-<p>You must enable the new importing option in the preferences screen to use this on
-2.1.54. On 2.1.55, the new importing path is the default.</p>
+and must be listed in separate lines at the top of the file.</p>
 <div class="table-wrapper"><table><thead><tr><th>Key</th><th>Allowed Values</th><th>Behaviour</th></tr></thead><tbody>
 <tr><td><code>separator</code></td><td><code>Comma</code>, <code>Semicolon</code>, <code>Tab</code>, <code>Space</code>, <code>Pipe</code>, <code>Colon</code>, or the according literal characters</td><td>Determines the field separator.</td></tr>
 <tr><td><code>html</code></td><td><code>true</code>, <code>false</code></td><td>Determines whether the file is treated as HTML.</td></tr>
-<tr><td><code>tags</code></td><td>List of tags, separated by spaces</td><td>Same as <a href="importing/text-files.html#adding-tags">the old syntax</a>.</td></tr>
+<tr><td><code>tags</code></td><td>List of tags, separated by spaces</td><td>Adds the listed tags to every imported note.</td></tr>
 <tr><td><code>columns</code></td><td>List of names, separated by the previously set separator</td><td>Determines the number of columns and shows their given names when importing.</td></tr>
 <tr><td><code>notetype</code></td><td>Note type name or id</td><td>Presets the note type, if it exists.</td></tr>
 <tr><td><code>deck</code></td><td>Deck name or id</td><td>Presets the deck, if it exists.</td></tr>
@@ -4956,13 +5068,12 @@ Anki clients will just ignore them.</p>
 </div>
 <p>Some headers have further implications.</p>
 <h3 id="notetype-column"><a class="header" href="#notetype-column">Notetype Column</a></h3>
-<p>Usually, all notes from a file will be mapped to a single note type, and you may
-choose which column should be mapped to which field of that note type.</p>
-<p>That changes, if there is a column with note type names or ids. This allows to
+<p>Usually, all notes from a file will be mapped to a single note type. That changes, if there is a column with note type names or ids. </p>
+<p>This allows you to
 import notes with different note types, and their fields will be mapped implicitly:
 The first regular column is used for the first field of any note regardless of
 its note type, the second regular column for the second field, and so on.
-A 'regular column' here being a column that does not contain special information
+A <em>regular column</em> here being a column that does not contain special information
 like decks, tags, note types or GUIDs.</p>
 <h3 id="deck-column"><a class="header" href="#deck-column">Deck Column</a></h3>
 <p>Usually, any new cards created as a result of importing a text file will be placed
@@ -4976,11 +5087,11 @@ export your notes with the GUID included, you can make changes to the notes, and
 as long as you do not modify the GUID field, you'll be able to import the notes back
 in to update the existing notes.</p>
 <p>Please note that the GUID is intended to be created by Anki. If you are creating
-your own IDs, such as MYNOTE0001, then it's recommended that you place the IDs
+your own IDs, such as <code>MYNOTE0001</code>, then it's recommended that you place the IDs
 in the first field, instead of assigning them to Anki's internal GUID. When importing,
 Anki is able to use either the first field or the GUID for duplicate checking, so you do not
 need to make IDs a GUID in order to be able to update your notes.</p>
-<p>One other thing to note is that the 'duplicate' option will not work for rows that have a
+<p>One other thing to note is that the duplicate option will not work for rows that have a
 non-empty GUID. If a GUID is provided, and already exists in the collection, a duplicate will
 not be created.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="packaged-decks"><a class="header" href="#packaged-decks">Packaged Decks</a></h1>
@@ -5044,7 +5155,7 @@ existing ones.</p>
 </li>
 </ul>
 <p>Exporting allows you to save part of your collection as a text file or
-packaged Anki deck. To export, click the File menu and choose 'Export'.</p>
+packaged Anki deck. To export, click the File menu and choose <strong>Export</strong>.</p>
 <h2 id="text-files-1"><a class="header" href="#text-files-1">Text Files</a></h2>
 <p>If you choose &quot;Notes in Plain Text&quot;, Anki will write the contents of the
 notes into a text file. Each field is separated by a tab. If you edit
@@ -5059,14 +5170,14 @@ add-on to make this easier.)</p>
 <p>In order for formatting to be preserved when you import text back in,
 the text is exported with all the HTML formatting embedded in it.</p>
 <h2 id="packaged-decks-1"><a class="header" href="#packaged-decks-1">Packaged Decks</a></h2>
-<p>A 'packaged deck' consists of cards, notes, note types, and any sounds or
+<p>A &quot;packaged deck&quot; consists of cards, notes, note types, and any sounds or
 images bundled up into a file ending with .apkg or .colpkg. You can use
 packaged decks to transfer cards between people, or for backing up parts
 of your collection.</p>
 <p>There are two different kinds of packaged decks.</p>
 <h3 id="collection-colpkg"><a class="header" href="#collection-colpkg">Collection (.colpkg)</a></h3>
 <p>When you export all decks with scheduling included, this is called a
-'collection package'. Anki will copy your entire collection into a file
+&quot;collection package&quot;. Anki will copy your entire collection into a file
 ending in .colpkg, and place it on your desktop. A collection package is
 used to back up your collection, or copy it to another device.</p>
 <p>Collection packages created with previous versions of Anki were called
@@ -5405,7 +5516,7 @@ step.</p>
 <strong>Start&gt;Run</strong> and type in <code>cmd.exe</code>.</p>
 <p>If you're on a recent Windows, the command prompt may not start on your
 desktop. If you don't see desktop displayed in the command prompt, type
-something like the following, replacing 'administrator' with your login
+something like the following, replacing &quot;administrator&quot; with your login
 name.</p>
 <pre><code>cd C:\Users\Administrator\Desktop
 </code></pre>
@@ -5447,7 +5558,7 @@ collection has been successfully restored.</p>
 <li><a href="stats.html#statistics">Statistics</a></li>
 <li><a href="stats.html#selecting-decks--collection">Selecting Decks / Collection</a>
 <ul>
-<li><a href="stats.html#deck">Deck.</a></li>
+<li><a href="stats.html#deck">Deck</a></li>
 <li><a href="stats.html#collection">Collection</a></li>
 <li><a href="stats.html#history">History</a></li>
 <li><a href="stats.html#more">More</a></li>
@@ -5455,6 +5566,7 @@ collection has been successfully restored.</p>
 </li>
 <li><a href="stats.html#today">Today</a></li>
 <li><a href="stats.html#the-graphs">The Graphs</a></li>
+<li><a href="stats.html#true-retention-table">True Retention Table</a></li>
 <li><a href="stats.html#manual-analysis">Manual Analysis</a></li>
 </ul>
 <h2 id="card-info"><a class="header" href="#card-info">Card Info</a></h2>
@@ -5484,7 +5596,7 @@ and the rating as 0.</p>
 top of the main window, or by pressing <kbd>T</kbd>.</p>
 <p><img src="media/Statistics.png" alt="Statistics screen" /></p>
 <h2 id="selecting-decks--collection"><a class="header" href="#selecting-decks--collection">Selecting Decks / Collection</a></h2>
-<h3 id="deck"><a class="header" href="#deck">Deck.</a></h3>
+<h3 id="deck"><a class="header" href="#deck">Deck</a></h3>
 <p>By default, the statistics window will show statistics from the currently selected deck and any
 subdecks it may contain, but you can select any deck from your collection by typing its name in the
 text box at the top of the screen or (from Anki 2.1.61), by using the deck selector at the bottom.</p>
@@ -5516,14 +5628,14 @@ accessible with a <kbd>Shift</kbd>-click on the Stats button.</p>
 <h2 id="today"><a class="header" href="#today">Today</a></h2>
 <p>At the top of the statistics window is a brief list of textual
 statistics about the reviews that you have completed today. A “review”
-in this context is 'one answering of a card', so a card might count as
+in this context is &quot;one answering of a card&quot;, so a card might count as
 multiple reviews if it needed to be seen multiple times, and a learning
 card answered also counts as a “review.” A couple of the stats whose
 meaning may not be immediately obvious:</p>
 <p><strong>Again Count</strong><br />
 This is the number of reviews that you have failed (i.e., pressed Again
 on). The correct percentage listed afterwards is the number of cards you
-did 'not' fail divided by the total number of cards you studied.</p>
+did &quot;not&quot; fail divided by the total number of cards you studied.</p>
 <p><strong>Learn, Review, Relearn, Filtered</strong><br />
 The number of reviews that were learning cards, review cards, relearning
 cards, or studied in a filtered deck when not due.</p>
@@ -5547,8 +5659,15 @@ Note that the forecast graph does not count reviews that are currently
 overdue, so if you have a large backlog, the overdue cards will not be
 displayed.</p>
 <p>Daily load is an estimate of the average number of cards to be reviewed daily.
-If you don't have a backlog, daily load should be approximately equal to 
+If you don't have a backlog, daily load should be approximately equal to
 your number of due cards.</p>
+<p>It is calculated as follows:
+\[\frac{1}{I_1} + \frac{1}{I_2} + \frac{1}{I_3} + \dots + \frac{1}{I_n}\]</p>
+<p>Here, \(I_n\) is the interval of
+the n-th card. If the interval is less than one day, the summation term is 1. This
+prevents cards with short intervals from unrealistically skewing the value of daily load.</p>
+<p>Example: you have a card with an interval of 10 days and a card with an interval of 50 days.
+Daily load = \(\frac{1}{10} + \frac{1}{50} = 0.12\), meaning that, <em>on average</em>, you will have 0.12 due cards per day.</p>
 <p><strong>Calendar</strong>
 This graph shows past card review activity. Hovering the mouse over a specific item
 allows you to view the number of revisions made that day. Click on a day of the
@@ -5593,8 +5712,8 @@ Only shown if FSRS is enabled. Difficulty determines how quickly a card's interv
 after each review.</p>
 <p><strong>Card Retrievability</strong><br />
 Only shown if FSRS is enabled. &quot;Retrievability&quot; is synonymous with &quot;probability of recall&quot;.</p>
-<p>Estimated total knowledge is the total number of cards you are likely to currently remember, 
-calculated by multiplying average retrievability by the number of cards that have been 
+<p>Estimated total knowledge is the total number of cards you are likely to currently remember,
+calculated by multiplying average retrievability by the number of cards that have been
 reviewed at least once.</p>
 <p><strong>Hourly Breakdown</strong><br />
 This graph shows what percentage of total reviews you have passed (i.e.,
@@ -5607,6 +5726,19 @@ This graph shows how many times you’ve chosen the Again, Hard, Good, or
 Easy button while studying learning/new, young, and
 <a href="getting-started.html#card-states">mature</a> cards. Anki also displays the percentage
 of correct reviews for each type of card.</p>
+<h2 id="true-retention-table"><a class="header" href="#true-retention-table">True Retention Table</a></h2>
+<p>This table shows your retention across different cards and different time frames.
+A card is defined as &quot;mature&quot; if its interval is ≥21 days. Only one review per day - the first one - counts.
+Again counts as &quot;Fail&quot;; Hard, Good, and Easy count as &quot;Pass&quot;.
+This table can be used to check how well <a href="https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html">Anki's spaced repetition algorithm</a> is working for you.</p>
+<p>If you are using FSRS, your true retention is expected to be close to your <a href="deck-options.html#desired-retention">desired retention</a>.
+Please keep in mind that data for a single day is noisy, so it's better to look at monthly data. If your true retention doesn't match your desired retention very well, here are some general recommendations:</p>
+<ol>
+<li>Optimize your FSRS parameters.</li>
+<li>Use different presets with their own parameters for different material.</li>
+<li>Suspend/reformulate <a href="leeches.html">leeches</a>.</li>
+<li>Make sure you are <a href="studying.html#answer-buttons">using the answer buttons as intended</a>.</li>
+</ol>
 <h2 id="manual-analysis"><a class="header" href="#manual-analysis">Manual Analysis</a></h2>
 <p>If you’re interested in getting information from your statistics other
 than what Anki provides, it is possible to access the data directly.
@@ -5623,17 +5755,17 @@ available for working with SQLite databases; one of the easiest to start
 with is called <a href="http://sqlitebrowser.org/">SQLite Browser</a>, which will
 allow you to look around the database as well as export a CSV version of
 tables for import into another program.</p>
-<p>The most important table for statistics is the 'revlog' table, which
+<p>The most important table for statistics is the &quot;revlog&quot; table, which
 stores an entry for each review that you conduct. The columns are as
 follows:</p>
 <p><strong>id</strong><br />
 The time at which the review was conducted, as the number of
 milliseconds that had passed since midnight UTC on January 1, 1970.
-(This is sometimes known as 'Unix epoch time', especially when in
+(This is sometimes known as &quot;Unix epoch time&quot;, especially when in
 straight seconds instead of milliseconds.)</p>
 <p><strong>cid</strong><br />
 The ID of the card that was reviewed. You can look up this value in the
-id field of the 'cards' table to get more information about the card,
+id field of the &quot;cards&quot; table to get more information about the card,
 although note that the card could have changed between when the revlog
 entry was recorded and when you are looking it up. It is also the
 millisecond timestamp of the card’s creation time.</p>
@@ -5711,7 +5843,11 @@ these formats will work on AnkiWeb and the mobile clients. MP3 audio and
 MP4 video seems to be the most universally supported.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="math-and-symbols"><a class="header" href="#math-and-symbols">Math and Symbols</a></h1>
 <ul>
-<li><a href="math.html#mathjax">MathJax</a></li>
+<li><a href="math.html#mathjax">MathJax</a>
+<ul>
+<li><a href="math.html#customize-mathjax">Customize MathJax</a></li>
+</ul>
+</li>
 <li><a href="math.html#latex">LaTeX</a>
 <ul>
 <li><a href="math.html#security-warning">Security Warning</a></li>
@@ -5749,22 +5885,35 @@ inline&quot; from the menu. Anki will change the text so it reads:</p>
 </code></pre>
 </li>
 <li>
-<p>If you click the Cards… button, you’ll see a preview of how the
-equation will appear when the card is reviewed.</p>
+<p>Click the <strong>Cards...</strong> button. You’ll see a preview of how the
+equation will appear when the card is reviewed.
+\[\sqrt{x}\]</p>
 </li>
 </ol>
 <p>Anki’s MathJax support expects content in TeX format. If you’re not
 familiar with TeX formatting, please see <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">this cheatsheet</a>.
-Please note that point 2 does not apply in Anki - Anki uses <code>\(</code> and
+Please note that point 1 does not apply in Anki - Anki uses <code>\(</code> and
 <code>\)</code> for inline equations, and <code>\[</code> and <code>\]</code> for display equations.</p>
 <p>If you want to use newlines in a MathJax expression, please use
 <kbd>Shift</kbd>+<kbd>Enter</kbd> instead of just <kbd>Enter</kbd>, as a normal newline will prevent
 MathJax from working correctly.</p>
 <p>Anki includes built in support for mhchem for rendering chemical
-equations. Please see the 'chemical equations' section and the following
+equations. Please see the &quot;chemical equations&quot; section and the following
 sections for more information:
 <a href="https://mhchem.github.io/MathJax-mhchem/">https://mhchem.github.io/MathJax-mhchem/</a></p>
-<p>It is possible to <a href="https://faqs.ankiweb.net/customizing-mathjax.html">customize some settings</a>.</p>
+<h3 id="customize-mathjax"><a class="header" href="#customize-mathjax">Customize MathJax</a></h3>
+<p>Anki's bundled MathJax support is loaded before card content, so if you wish to customise MathJax you'll have to do so in a specific way. An example is provided here.</p>
+<pre><code class="language-javascript">&lt;script&gt;
+MathJax.config.tex['macros'] = {
+    R: '{\\mathbb {R}}',
+};
+if (typeof is_already_run == 'undefined') {
+  is_already_run = true
+  MathJax.startup.getComponents();
+}
+&lt;/script&gt;
+</code></pre>
+<p>Note that Anki has special logic for cloze deletions that might not work if you change the standard delimiters for MathJax equations.</p>
 <h2 id="latex"><a class="header" href="#latex">LaTeX</a></h2>
 <p>LaTeX is a powerful typesetting system, useful for entering mathematical
 formulas, chemical formulas, musical notation and so on. Anki provides
@@ -5780,7 +5929,7 @@ MathJax provides.</p>
 <p>LaTeX code can contain malicious commands that can read or write non-Anki
 data on your computer. For this reason, recent Anki versions will refuse to
 generate LaTeX images by default.</p>
-<p>If you wish to use LaTeX on your own cards, you will need to enable the 'Generate LaTeX images' option in the preferences screen.</p>
+<p>If you wish to use LaTeX on your own cards, you will need to enable the <strong>Generate LaTeX images</strong> option in the preferences screen.</p>
 <p><strong>We strongly recommend you do not enable this option if you use shared decks, or think
 you will import shared decks in the future, as you are potentially giving any shared
 deck author access to your computer</strong>.</p>
@@ -5831,15 +5980,15 @@ template will <a href="templates/fields.html">cause problems</a>.</p>
 </code></pre>
 <p>will produce this when the flashcard is viewed:</p>
 <p><img src="math/convergence_question.png" alt="convergence question" /></p>
-<p>The formula in the example above is called a 'text formula', because it
+<p>The formula in the example above is called a &quot;text formula&quot;, because it
 is displayed right within the non-mathematical text. In contrast, the
-following example shows a 'displayed formula':</p>
+following example shows a &quot;displayed formula&quot;:</p>
 <pre><code>Does the sum below converge?
 
 [latex]\begin{displaymath}\sum_{k = 1}^{\infty}\frac{1}{k}\end{displaymath}[/latex]
 </code></pre>
 <p><img src="math/convergence_question_2.png" alt="convergence question 2" /></p>
-<p>'Text formulas' and 'display formulas' are the most common type of LaTeX
+<p>&quot;Text formulas&quot; and &quot;display formulas&quot; are the most common type of LaTeX
 expressions, so Anki provides abbreviated versions of them. Expressions
 of the form:</p>
 <pre><code>[latex]\begin{math}...\end{math}[/latex]
@@ -5973,7 +6122,7 @@ package as described in the previous section.</p>
 </ul>
 <p>Leeches are cards that you keep forgetting. Because they require so
 many reviews, they take up a lot more of your time, compared to other cards.</p>
-<p>Anki can help you identify leeches. Each time a review card 'lapses' (is 
+<p>Anki can help you identify leeches. Each time a review card &quot;lapses&quot; (is 
 failed while it is in review mode), a counter increases. When this counter
 reaches 8, Anki tags the note as a leech and suspends the card. The 
 threshold, and whether to suspend or not, can be adjusted in the
@@ -6001,7 +6150,7 @@ difficult and obscure items, you can spend more time learning other
 material, making studying more enjoyable. If you think the card might be 
 useful for future reference, you can leave it suspended.</p>
 <h2 id="waiting"><a class="header" href="#waiting">Waiting</a></h2>
-<p>Some leeches are caused by 'interference'. For example, an English
+<p>Some leeches are caused by &quot;interference&quot;. For example, an English
 learner may have recently learnt the words &quot;disappoint&quot; and &quot;disappear&quot;.
 As they look similar, the learner may find themselves confusing the two
 when trying to answer. In such situations, it’s often helpful to
@@ -6034,35 +6183,59 @@ the top of the file may help.</p>
 <p>To learn how to write your own add-ons, please see the <a href="https://addon-docs.ankiweb.net">add-on writing guide</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h1>
 <p>If you encounter a problem with Anki, please try the following steps in order:</p>
-<p><strong>1. Restart Anki</strong></p>
+<h3 id="1-restart-anki"><a class="header" href="#1-restart-anki">1. Restart Anki</a></h3>
 <p>Please close Anki, then start it again.</p>
-<p>If you are unable to close Anki because of an error message, you can either terminate Anki using your task manager, or restart your computer. Anki saves periodically, so you should not lose more than a few minutes of work in most circumstances.</p>
+<p>If you are unable to close Anki because of an error message, you can either
+terminate Anki using your task manager, or restart your computer. Anki saves
+periodically, so you should not lose more than a few minutes of work in most
+circumstances.</p>
 <p>If the problem does not occur again, you can skip the following steps.</p>
-<p><strong>2. Check add-ons</strong></p>
-<p>Please close Anki, then open it in safe mode by holding down the <kbd>Shift</kbd> key while starting Anki. Keep holding <kbd>Shift</kbd> down until the on-screen message informs you that Anki has started in safe mode. </p>
-<p>If the problem goes away, that indicates an add-on is causing the problem. Remove any add-ons you don't need, and disable half of the others. If the problem continues, try the other half. Repeat
-the process until you've figured out which add-on is causing the problem. Then please report the issue to the add-on author, using the Copy Debug Info button, and pasting that into the report.</p>
-<p><strong>3. Check your Anki version</strong></p>
-<p>You can find the version you're using in the Help&gt;About or Anki&gt;About menu. If the version you're using is not the latest version published on <a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a>, please close Anki, install the latest version, and then start Anki again to see if the problem has gone away.</p>
-<p>If you're using Linux, please make sure you can reproduce the error using the packaged version on the Anki website, as distros often distribute <a href="https://anki.tenderapp.com/kb/anki-ecosystem/third-party-linux-packages-and-source-builds-are-not-supported">broken versions</a>.</p>
-<p><strong>4. Check your database</strong></p>
-<p>After restarting Anki, please try the Tools&gt;Check Database menu item to make sure your collection doesn't have any problems.</p>
-<p><strong>5. Restart your computer</strong></p>
+<h3 id="2-check-add-ons"><a class="header" href="#2-check-add-ons">2. Check add-ons</a></h3>
+<p>Please close Anki, then open it in safe mode by holding down the
+<kbd>Shift</kbd> key while starting Anki. Keep holding <kbd>Shift</kbd> down
+until the on-screen message informs you that Anki has started in safe mode. </p>
+<p>If the problem goes away, that indicates an add-on is causing the problem.
+Remove any add-ons you don't need, and disable half of the others. If the
+problem continues, try the other half. Repeat the process until you've figured
+out which add-on is causing the problem. Then please report the issue to the
+add-on author, using the Copy Debug Info button, and pasting that into the
+report.</p>
+<h3 id="3-check-your-anki-version"><a class="header" href="#3-check-your-anki-version">3. Check your Anki version</a></h3>
+<p>You can find the version you're using in the <strong>Help → About</strong> or <strong>Anki →
+About</strong> menu. If the version you're using is not the latest version published on
+<a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a>, please close Anki, install the latest version, and
+then start Anki again to see if the problem has gone away.</p>
+<p>If you're using Linux, please make sure you can reproduce the error using the
+packaged version on the Anki website, as distros often distribute <a href="platform/linux/distro-packages.html">broken
+versions</a>.</p>
+<h3 id="4-check-your-database"><a class="header" href="#4-check-your-database">4. Check your database</a></h3>
+<p>After restarting Anki, please try the <strong>Tools → Check Database</strong> menu item to
+make sure your collection doesn't have any problems.</p>
+<h3 id="5-restart-your-computer"><a class="header" href="#5-restart-your-computer">5. Restart your computer</a></h3>
 <p>Sometimes restarting your computer may help.</p>
-<p><strong>6. Change the Video Driver</strong></p>
+<h3 id="6-change-the-video-driver"><a class="header" href="#6-change-the-video-driver">6. Change the Video Driver</a></h3>
 <p>Crashes and display issues can be caused by the video driver. Changing to a
-different video driver in the preferences screen or via the gldriver file may
-help. Make sure you try all three options and restart Anki after each change.</p>
+different video driver may help. Make sure you try all the driver options and
+restart Anki after each change.</p>
+<p>If you're using Anki version 23.10 or above, the easiest way is to open
+<strong>Tools → Preferences</strong> (or <strong>Anki → Preferences</strong> if you're on a Mac) and
+change the driver from the dropdown menu.</p>
+<p>If you are on an older Anki version or if you cannot access the preferences for
+some reason, you can use the command-line instructions instead and manually
+change the gldriver file:</p>
 <ul>
 <li><a href="https://docs.ankiweb.net/platform/windows/display-issues.html">Windows</a></li>
 <li><a href="https://docs.ankiweb.net/platform/mac/display-issues.html">Mac</a></li>
 <li><a href="https://docs.ankiweb.net/platform/linux/display-issues.html">Linux</a></li>
 </ul>
-<p><strong>7. Reset window sizes</strong></p>
-<p>Sometimes pressing 'reset window sizes' button in the preferences screen
+<h3 id="7-reset-window-sizes"><a class="header" href="#7-reset-window-sizes">7. Reset window sizes</a></h3>
+<p>Sometimes pressing <strong>reset window sizes</strong> button in the preferences screen
 immediately after starting Anki will help.</p>
-<p><strong>8. If the problem remains</strong></p>
-<p>If you're confirmed you are using the latest Anki version, and are still receiving errors when starting Anki while holding down the shift key, please <a href="./getting-help.html">report the problem</a>, including the next error you receive in your post.</p>
+<h3 id="8-if-the-problem-remains"><a class="header" href="#8-if-the-problem-remains">8. If the problem remains</a></h3>
+<p>If you've confirmed you are using the latest Anki version, and are still
+receiving errors when starting Anki while holding down the shift key,
+please <a href="./getting-help.html">report the problem</a>, including the next error you
+receive in your post.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="self-hosted-sync-server-1"><a class="header" href="#self-hosted-sync-server-1">Self-Hosted Sync Server</a></h1>
 <p>Advanced users who cannot or do not wish to use AnkiWeb can use a self-hosted
 sync server instead.</p>
@@ -6077,7 +6250,7 @@ stop working if you update your Anki clients without also updating the server.</
 <li>Third-party sync servers also exist. No testing is done against them, and
 they tend to take time to catch up when the sync protocol changes, so they
 are not recommended.</li>
-<li>The messages inside Anki will use the term 'AnkiWeb' even if a custom server
+<li>The messages inside Anki will use the term &quot;AnkiWeb&quot; even if a custom server
 has been configured, (e.g &quot;Cannot connect to AnkiWeb&quot; when your server is down).</li>
 </ul>
 <h2 id="installingrunning"><a class="header" href="#installingrunning">Installing/Running</a></h2>
@@ -6120,6 +6293,9 @@ Make sure you have Rustup installed.</p>
 <pre><code>./ninja extract:protoc
 cargo install --path rslib/sync
 </code></pre>
+<h3 id="with-docker"><a class="header" href="#with-docker">With Docker</a></h3>
+<p>You can find a user-contributed Dockerfile and some instructions
+<a href="https://github.com/ankitects/anki/tree/main/docs/syncserver">here</a>.</p>
 <h2 id="multiple-users"><a class="header" href="#multiple-users">Multiple Users</a></h2>
 <p><code>SYNC_USER1</code> declares the first user and password, and must be set.
 You can optionally declare <code>SYNC_USER2</code>, <code>SYNC_USER3</code> and so on, if you
@@ -6136,9 +6312,13 @@ the PHC Format.</p>
 <h2 id="storage-location"><a class="header" href="#storage-location">Storage Location</a></h2>
 <p>The server needs to store a copy of your collection and media in a folder.
 By default it is ~/.syncserver; you can change this by defining
-a <code>SYNC_BASE</code> environmental variable. This must not be the same
-location as your normal Anki data folder, as the server and client
-must store separate copies.</p>
+a <code>SYNC_BASE</code> environmental variable.</p>
+<ul>
+<li>This must not be the same location as your normal Anki data folder, as the
+server and client must store separate copies.</li>
+<li>You must sync your data to the server, not manually copy files into the
+server folder.</li>
+</ul>
 <h2 id="public-access"><a class="header" href="#public-access">Public Access</a></h2>
 <p>The server listens on an unencrypted HTTP connection, so it's not a good
 idea to expose it directly to the internet. You'll want to either restrict
@@ -6277,28 +6457,7 @@ them about it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="frequently-asked-questions"><a class="header" href="#frequently-asked-questions">Frequently Asked Questions</a></h1>
 <p>Please see <a href="https://faqs.ankiweb.net">https://faqs.ankiweb.net</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
-<h2 id="writings"><a class="header" href="#writings">Writings</a></h2>
-<ul>
-<li>
-<p><a href="https://supermemo.guru/wiki/SuperMemo_Guru">SuperMemo Guru</a>: Piotr Wozniak's writings about spaced repetition and memory.</p>
-</li>
-<li>
-<p><a href="http://augmentingcognition.com/ltm.html">Augmenting Long-term Cognition</a>: Michael Nielsen's article about long term memory and how he uses Anki. He also provides a <a href="https://twitter.com/michael_nielsen/status/957763229454774272">condensed version</a> as a series of tweets.</p>
-</li>
-<li>
-<p><a href="https://controlaltbackspace.org/categories/memory/">Control-Alt-Backspace</a>: Writings about memory, SRS and how to use Anki effectively from Soren Bjornstad's blog.</p>
-</li>
-<li>
-<p><a href="https://github.com/open-spaced-repetition/fsrs4anki/wiki/Spaced-Repetition-Algorithm:-A-Three%E2%80%90Day-Journey-from-Novice-to-Expert">Spaced Repetition Algorithm: A Three‐Day Journey from Novice to Expert</a>: An article from Jarrett Ye about spaced repetition algorithms. Jarrett Ye is the creator of FSRS, the algorithm Anki uses.</p>
-</li>
-<li>
-<p><a href="https://expertium.github.io/">Expertium's Blog</a>: Articles related to spaced repetition and FSRS, from one of the contributors to FSRS.</p>
-</li>
-</ul>
-<h2 id="guides"><a class="header" href="#guides">Guides</a></h2>
-<ul>
-<li><a href="https://www.theanking.com/anki-mastery-course">Anki Mastery Course</a>: A paid-for guide focusing on Anki use in medical schools.</li>
-</ul>
+<p>You can find guides, templates, custom schedulers and other resources in Anki's crowdsourced <a href="https://docs.google.com/document/d/1xWnF_r0z4cRNOHDeXGYOuUH3FsDAzdab8VUjx4lnzL4/edit?usp=drivesdk">resource list</a>.</p>
 
                     </main>
 
@@ -6337,7 +6496,9 @@ them about it.</p>
 
         <script type="text/javascript">
         window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
         });
         </script>
 

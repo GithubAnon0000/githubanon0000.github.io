@@ -33,6 +33,8 @@
         <link rel="stylesheet" href="css/misc.css">
         <link rel="stylesheet" href="css/kbd.css">
 
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -190,7 +192,12 @@
 </li>
 <li><a href="#burying">Burying</a></li>
 <li><a href="#audio">Audio</a></li>
-<li><a href="#timer">Timer</a></li>
+<li><a href="#timers">Timers</a>
+<ul>
+<li><a href="#internal-timer">Internal Timer</a></li>
+<li><a href="#on-screen-timer">On-screen Timer</a></li>
+</ul>
+</li>
 <li><a href="#auto-advance">Auto Advance</a></li>
 <li><a href="#easy-days">Easy Days</a></li>
 <li><a href="#fsrs">FSRS</a>
@@ -256,7 +263,6 @@ want to modify some of the options but keep the rest as they are.</li>
 a <a href="./syncing.html#conflicts">one-way sync</a>.</li>
 <li><strong>Save to All Subdecks</strong>: Like <strong>Save</strong>, but also assigns the selected preset to all
 subdecks of the currently selected deck.</li>
-<li><strong>Optimize All Presets</strong>: When FSRS is enabled, this allows you to optimize the parameters of all presets at once.</li>
 </ul>
 <p>Deck options are not retroactive. For example, if you change an option that
 controls the delay after failing a card, cards that you failed before
@@ -365,9 +371,9 @@ becomes a review card. The card is shown again after the delay configured by the
 </ul>
 <p>The <strong>Hard</strong> button works differently depending on which step you're on.</p>
 <ul>
-<li>When you're on the first step, the <strong>Hard</strong> button shows a delay of <code>6m</code>. The <code>6m</code> delay is the average of first two steps: <code>2m 10m</code>.
+<li>When you're on the first step, the <strong>Hard</strong> button shows a delay of <code>6m</code>. The <code>6m</code> delay is the average of first two steps: <code>1m</code> and <code>10m</code>.
 <ul>
-<li>Exception: When there's only one learning step, <strong>Hard</strong> button shows a delay 1.5 times that step. This delay is at most 1 day longer than the learning step.</li>
+<li>Exception: When there's only one learning step, the <strong>Hard</strong> button shows a delay 1.5 times that step. This delay is at most 1 day longer than the learning step.</li>
 </ul>
 </li>
 <li>When you're on any other step, the <strong>Hard</strong> button repeats that step.</li>
@@ -511,8 +517,8 @@ reduce the chances of forgetting more cards.</p>
 overdue cards are, and how long their interval is. For example, a card with a
 current interval of 5 days that is overdue by 2 days, will display before a card
 with a current interval of 10 days that is overdue by 3 days.</p>
-<p>When using FSRS, overdueness is calculated based on on each card's retrievability,
-and the desired retention in the deck preset.</p>
+<p>When FSRS is enabled, this sort order is removed; the FSRS equivalent is <strong>Ascending retrievability</strong>,
+which is calculated based on each card's retrievability (probability of recall) and the desired retention in the preset.</p>
 </li>
 </ul>
 <h2 id="burying"><a class="header" href="#burying">Burying</a></h2>
@@ -539,23 +545,28 @@ cards. If you turn on this option Anki will not play audio until you press the r
 the question side is played when you use replay action on the answer side. Note that, Anki <a href="./templates/fields.html#special-fields">does not automatically play</a> audio from the <code>{{FrontSide}}</code> field. This option does not influence the behaviour of automatic play.</p>
 </li>
 </ul>
-<h2 id="timer"><a class="header" href="#timer">Timer</a></h2>
+<h2 id="timers"><a class="header" href="#timers">Timers</a></h2>
+<p><a id="timer"></a></p>
 <p>Anki monitors how long it takes you to answer each card, so that it
 can show you how long was spent studying each day. The time taken does
 not influence scheduling.</p>
-<p>The options are:</p>
+<h3 id="internal-timer"><a class="header" href="#internal-timer">Internal Timer</a></h3>
 <ul>
 <li>Maximum answer seconds: The default limit is 60 seconds. If you take
 longer than that, Anki assumes you have walked away from your computer
-or have been distracted, and limits the recorded time to 60 seconds, so
-that you don’t end up with inaccurate statistics. If you consistently
-take longer than 60 seconds to answer a card (from when question is shown
-until you press an answer button), you may want to either consider raising
-this limit, or, ideally, making your cards simpler.</li>
-<li>Show answer timer: In the review screen, show a timer that counts the number
-of seconds you're taking to review each card.</li>
-<li>Stop timer on answer: whether the timer should keep running when you show
-the answer.</li>
+or have been distracted, and caps the recorded time at 60 seconds, so
+that you don’t end up with inaccurate statistics.</li>
+<li>This internal timer runs from when the question is shown until you press a button to grade your answer. If you consistently
+spend longer than 60 seconds on a card, 
+you may want to consider either raising
+this limit, or even better, making your cards simpler.</li>
+</ul>
+<h3 id="on-screen-timer"><a class="header" href="#on-screen-timer">On-screen Timer</a></h3>
+<ul>
+<li>Show on-screen timer: On the Study screen, show a timer that counts the time
+you're taking to study each card. (This timer will stop when it reaches the Maximum answer seconds set for the internal timer.)</li>
+<li>Stop on-screen timer on answer: Whether the on-screen timer should continue running from when you show
+the answer until you press a button to grade your answer. This option does not impact the time that is recorded for your statistics.</li>
 </ul>
 <h2 id="auto-advance"><a class="header" href="#auto-advance">Auto Advance</a></h2>
 <p>Requires Anki 23.12 or later. Auto Advance allows you to automatically take some actions after a certain amount of time has passed. To use it, you must first set a non-zero
@@ -573,13 +584,13 @@ SuperMemo 2 (SM-2) algorithm. By more accurately determining how much informatio
 to forget, it can help you remember more material in the same amount of time.</p>
 <p>When you turn on FSRS, some new options
 become available, and SM-2 specific options, such as <strong>Graduating interval</strong>,
-<strong>Easy bonus</strong>, etc. are hidden. This option is shared by all deck presets.</p>
+<strong>Easy bonus</strong>, etc. are hidden. This option is shared by all presets.</p>
 <p><strong>Before Enabling</strong></p>
 <ul>
 <li>Please ensure all of your Anki clients support FSRS. Anki 23.10, AnkiMobile 23.10,
 and AnkiWeb all support it. AnkiDroid supports it in 2.17+. If
 one of your clients doesn't support it, things will not work correctly.</li>
-<li>If you previously used the 'custom scheduling' version of FSRS, please make
+<li>If you previously used the &quot;custom scheduling&quot; version of FSRS, please make
 sure you clear out the custom scheduling section before enabling FSRS.</li>
 </ul>
 <h3 id="a-short-guide"><a class="header" href="#a-short-guide">A Short Guide</a></h3>
@@ -624,13 +635,12 @@ number, and recommend you keep it lower than <code>0.97</code> and higher than t
 <p>When you click the <strong>Optimize</strong> button, FSRS will analyze your review history, and generate parameters that are optimal for your memory and the content you're studying. If you have decks that vary wildly in subjective difficulty, it
 is recommended to assign them separate presets, as the parameters for easier
 decks will be different from harder decks. There is no need to optimize your
-parameters frequently: once every few months is sufficient.</p>
+parameters frequently: once every month is sufficient.</p>
 <p>By default, parameters are calculated from the review history of all
 decks using the current preset. You can optionally <a href="./searching.html">adjust the search</a>
 before optimizing the parameters, if you'd like to change which cards
 are used for optimization.</p>
-<p>You can also optimize the parameters for all of your presets at once, by clicking on the
-down arrow in the top right corner of the deck options window, then choosing <strong>Optimize All Presets</strong>.</p>
+<p>You can also optimize the parameters for all of your presets at once by clicking on <strong>Optimize All Presets</strong>.</p>
 <p><strong>Evaluate FSRS Parameters</strong></p>
 <p>You can use the <strong>Evaluate</strong> button to see metrics that show how well the parameters fit your review history. Smaller numbers
 indicate a better fit to your review history.</p>
@@ -655,7 +665,8 @@ either in reviews per day or in minutes of studying per day.</p>
 <li><strong>Days to simulate</strong> controls the duration of the simulated study history.</li>
 <li><strong>Additional new cards to simulate</strong> controls whether the simulator should 
 simulate more cards than this preset already has. For example, if you currently have 100 cards under this preset,
-and you set <strong>Additional new cards to simulate</strong> to 50, the simulator will simulate a total of 150 cards.</li>
+and you set <strong>Additional new cards to simulate</strong> to 50, the simulator will simulate a total of 150 cards.
+This can be useful if you plan to create more new cards in the future.</li>
 <li><strong>New cards/day</strong> and <strong>Maximum reviews/day</strong> control how many new cards will be learned each day and 
 the maximum number of reviews per day.</li>
 <li><strong>Maximum interval</strong> controls the maximum interval length (in days).</li>
@@ -720,7 +731,7 @@ interval would be around 13 days).</p>
 <h3 id="interval-modifier"><a class="header" href="#interval-modifier">Interval Modifier</a></h3>
 <p>An extra multiplier that is applied to all reviews. At its default of 1.00 it
 does nothing. If you set it to 0.80, intervals will be generated at
-80% of their normal size (so a 10 day interval would become 8 days). You can
+80% of their normal size (so a 10 day interval would become 8 days).
 You can thus use the multiplier to to make your reviews less or more frequent.</p>
 <p>For moderately difficult material, the average user should find they
 remember approximately 90% of mature cards when they come up for review. You
@@ -770,7 +781,36 @@ the <strong>New Interval</strong> to 0.20, the new interval would be 20 days.</p
 <p>While preserving part of the interval may seem to make sense, SuperMemo has observed
 that preserving part of the delay can actually <a href="https://supermemo.guru/wiki/Post-lapse_stability">be counter-productive</a>. For this reason, we recommend you leave it on the default setting.</p>
 <h3 id="custom-scheduling"><a class="header" href="#custom-scheduling">Custom Scheduling</a></h3>
-<p>Please see <a href="https://faqs.ankiweb.net/the-2021-scheduler.html#add-ons-and-custom-scheduling">this page</a>.</p>
+<p>You can have more control over Anki's scheduling of cards by using your own JavaScript in the custom scheduling field. This is a global option, so code entered here applies to every preset.</p>
+<p>Here is an example custom scheduling script. Note that, for Qt5 versions of Anki, the code needs to be transpiled.</p>
+<pre><code class="language-javascript">// print the existing states
+console.log(
+  JSON.stringify(states, null, 4)
+);
+
+// load the debugger if the web inspector is open
+debugger;
+
+// if the hard button is a learning step, make it
+// a 123 minute delay
+if (states.hard.normal?.learning) {
+  states.hard.normal.learning.scheduledSecs = 123 * 60;
+}
+
+// apply the same change in a rescheduling filtered deck
+if (states.hard.filtered?.rescheduling?.originalState?.learning) {
+  states.hard.filtered.rescheduling.originalState.learning.scheduledSecs =
+    123 * 60;
+}
+
+// increase ease factor by 0.2 when Easy used on a review
+if (states.good.normal?.review) {
+  states.easy.normal.review.easeFactor =
+    states.good.normal.review.easeFactor + 0.2;
+}
+</code></pre>
+<p>You can also see <a href="https://github.com/open-spaced-repetition/fsrs4anki/blob/main/fsrs4anki_scheduler.js">FSRS custom scheduling code</a> as an example.</p>
+<p>The various scheduling states of cards are described in <a href="https://github.com/ankitects/anki/blob/main/proto/anki/scheduler.proto">SchedulingStates</a>.</p>
 
                     </main>
 

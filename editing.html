@@ -33,6 +33,8 @@
         <link rel="stylesheet" href="css/misc.css">
         <link rel="stylesheet" href="css/kbd.css">
 
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -177,12 +179,19 @@
 </ul>
 </li>
 <li><a href="#editing-io-notes">Editing IO notes</a></li>
-<li><a href="#inputting-foreign-characters-and-accents">Inputting Foreign Characters and Accents</a></li>
+<li><a href="#inputting-non-latin-characters-and-accents">Inputting Non-Latin Characters and Accents</a>
+<ul>
+<li><a href="#adding-international-keyboard-layouts">Adding international keyboard layouts</a></li>
+<li><a href="#adding-keyboard-layouts-for-specific-languages">Adding keyboard layouts for specific languages</a></li>
+<li><a href="#right-to-left-languages">Right-to-left Languages</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
+</li>
 <li><a href="#unicode-normalization">Unicode Normalization</a></li>
 </ul>
 <h2 id="adding-cards-and-notes"><a class="header" href="#adding-cards-and-notes">Adding Cards and Notes</a></h2>
 <p>Recall from the <a href="getting-started.html">basics</a> that in Anki we add notes rather than
-cards, and Anki creates cards for us. Click 'Add' in the <a href="studying.html#decks">main window</a>,
+cards, and Anki creates cards for us. Click <strong>Add</strong> in the <a href="studying.html#decks">main window</a>,
 and the Add Notes window will appear.</p>
 <p><img src="media/add_screen.png" alt="Add Screen" /></p>
 <p>The top left of the window shows us the current <a href="getting-started.html#note-types">note type</a>. If it does
@@ -191,7 +200,7 @@ downloaded a shared deck. The text below assumes that &quot;Basic&quot; is
 selected.</p>
 <p>The top right of the window shows us the <a href="getting-started.html#decks">deck</a> cards will be added to. If
 you would like to add cards to a new deck, you can click on the deck name
-button and then click &quot;Add&quot;.</p>
+button and then click <strong>Add</strong>.</p>
 <p>Below the note type, you'll see some buttons, and an area labelled
 &quot;Front&quot; and &quot;Back&quot;. Front and Back are called <a href="getting-started.html#notes--fields">fields</a>, and you can add,
 remove, and rename them by clicking the &quot;Fields…​&quot; button above.</p>
@@ -274,11 +283,15 @@ a note, or while the note type is selected in the Manage Note Types
 window.</p>
 <p><img src="media/fields.png" alt="Fields" /></p>
 <p>You can add, remove, or rename fields by clicking the appropriate
-buttons. To change the order in which the fields appear in this dialog
+buttons.</p>
+<p>To change the order in which the fields appear in this dialog
 and the add notes dialog, you can use the reposition button, which asks
 for the numerical position you want the field to have. So if you want to
 change a field to be the new first field, enter &quot;1&quot;.</p>
-<p>Do not use 'Tags', 'Type', 'Deck', 'Card', or 'FrontSide' as field
+<p>Alternatively you can also drag and drop the field names to re-order them. To do
+that, use your mouse or finger to drag the field to the desired position. An indicator will
+show you where the field will be moved to.</p>
+<p>Do not use &quot;Tags&quot;, &quot;Type&quot;, &quot;Deck&quot;, &quot;Card&quot;, or &quot;FrontSide&quot; as field
 names, as they are <a href="templates/fields.html#special-fields">special fields</a> and will not work
 properly.</p>
 <p>The options at the bottom of the screen allow you to edit various
@@ -289,7 +302,7 @@ reviewing; for that, please see <a href="templates/intro.html">templates</a>.</p
 <li>
 <p><strong>Editing Font</strong> allows you to customize the font and size used when
 editing notes. This is useful if you want to make unimportant
-information smaller, or increase the size of foreign characters which
+information smaller, or increase the size of non-Latin characters which
 are hard to read. The changes you make here do not affect how cards
 appear when reviewing: to do that, please see the
 <a href="templates/intro.html">templates</a> section. If you have enabled the &quot;type in the
@@ -429,7 +442,7 @@ of the text, whether the selected text is bold, etc. The next three buttons allo
 <p>You can use the paper-clip button to select audio, images, and videos from
 your computer's hard drive and attach them to your notes. Alternatively, you
 can copy the media onto your computer's clipboard (for instance, by
-right-clicking an image on the web and choosing 'Copy Image') and paste
+right-clicking an image on the web and choosing &quot;Copy Image&quot;) and paste
 it into the field that you want to place it in. For more information
 about media, please see the <a href="media.html">media</a> section.</p>
 <p>The microphone icon allows you to record from your computer's microphone
@@ -453,7 +466,7 @@ hold down the <kbd>Shift</kbd> key while pasting, Anki will strip most of the
 formatting. Under Preferences, you can toggle &quot;Paste without shift
 key strips formatting&quot; to modify the default behaviour.</p>
 <h2 id="cloze-deletion"><a class="header" href="#cloze-deletion">Cloze Deletion</a></h2>
-<p>'Cloze deletion' is the process of hiding one or more words in a
+<p><em>Cloze deletion</em> is the process of hiding one or more words in a
 sentence. For example, if you have the sentence:</p>
 <pre><code>Canberra was founded in 1913.
 </code></pre>
@@ -462,7 +475,7 @@ become:</p>
 <pre><code>Canberra was founded in [...].
 </code></pre>
 <p>Sometimes sections that have been removed in this fashion are said to be
-'occluded'.</p>
+&quot;occluded&quot;.</p>
 <p>For more information on why you might want to use cloze deletion, see
 Rule 5 <a href="https://super-memory.com/articles/20rules.htm">here</a>.</p>
 <p>Anki provides a special cloze deletion type of note, to make creating
@@ -515,6 +528,10 @@ correctly, please see the section on <a href="templates/fields.html#checking-you
 Canberra [...] in 1913 -&gt; was founded
 </code></pre>
 <p>with the word &quot;was&quot; appearing in both deletions.</p>
+<p>The current implementation can only handle a limited amount of nesting. In Anki 24.11, it is 3 levels.
+In other versions, the limit is around 8, but Anki may become slow as you approach the limit. It is
+not possible to extend the limit. If you use this feature, it is recommended you limit yourself to a
+few levels of nesting.</p>
 <p>Prior to version 2.1.56, if you need to create clozes from overlapping text, add another Text
 field to your cloze, add it to the <a href="templates/intro.html">template</a>, and then when
 creating notes, paste the text into two separate fields, like so:</p>
@@ -589,27 +606,47 @@ two or more single shapes will create only one card once grouped.</li>
 </ul>
 <p>While reviewing IO Cards a &quot;Toggle Masks&quot; button will appear just below the image.
 This button will temporary clear all shapes of the note when using &quot;Hide All, Guess One&quot; mode.</p>
-<h2 id="inputting-foreign-characters-and-accents"><a class="header" href="#inputting-foreign-characters-and-accents">Inputting Foreign Characters and Accents</a></h2>
+<h2 id="inputting-non-latin-characters-and-accents"><a class="header" href="#inputting-non-latin-characters-and-accents">Inputting Non-Latin Characters and Accents</a></h2>
 <p>All modern computers have built-in support for typing accents and
-foreign characters, and multiple ways to go about it. The method we
+non-Latin characters, and multiple ways to go about it. The method we
 recommend is by using a keyboard layout for the language you want to learn.</p>
 <p>Languages with a separate script like Japanese, Chinese, Thai, and so on,
 have their own layouts specific to that language.</p>
 <p>European languages that use accents may have their own layout, but can
 often be typed on a generic &quot;international keyboard&quot; layout. These work
 by typing the accent, then the character you want accented - e.g. an
-apostrophe (') then the letter a (a) gives á.</p>
-<p>To add the international keyboard on Windows machines, please see
-<a href="https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/">https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/</a></p>
-<p>To add it on Macs, please see
-<a href="http://www.macworld.com/article/1147039/os-x/accentinput.html">http://www.macworld.com/article/1147039/os-x/accentinput.html</a></p>
-<p>Keyboards for a specific language are added in a similar way, but we can
+apostrophe (<kbd>´</kbd>) then the letter a (<kbd>a</kbd>) gives á.</p>
+<h3 id="adding-international-keyboard-layouts"><a class="header" href="#adding-international-keyboard-layouts">Adding international keyboard layouts</a></h3>
+<p>Instructions on how to use international keyboards vary depending on the operating
+system and desktop environment that you are using. To get started, please see the
+links below.</p>
+<p>Windows:</p>
+<ul>
+<li><a href="https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/">https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/</a></li>
+</ul>
+<p>Mac:</p>
+<ul>
+<li><a href="http://www.macworld.com/article/1147039/os-x/accentinput.html">http://www.macworld.com/article/1147039/os-x/accentinput.html</a></li>
+</ul>
+<p>Linux:</p>
+<ul>
+<li>Gnome: <a href="https://help.gnome.org/users/gnome-help/stable/tips-specialchars.html.en">https://help.gnome.org/users/gnome-help/stable/tips-specialchars.html.en</a></li>
+<li>KDE Plasma: <a href="https://userbase.kde.org/Tutorials/ComposeKey">https://userbase.kde.org/Tutorials/ComposeKey</a></li>
+</ul>
+<h3 id="adding-keyboard-layouts-for-specific-languages"><a class="header" href="#adding-keyboard-layouts-for-specific-languages">Adding keyboard layouts for specific languages</a></h3>
+<p>Keyboards for specific languages are added in a similar way, but we can
 not cover them all here. For more information, please try searching
-Google for &quot;input Japanese on a mac&quot;, &quot;type Chinese on Windows 10&quot;, and
+on the internet for &quot;input Japanese on a mac&quot;, &quot;type Chinese on Windows 10&quot;, and
 so on.</p>
+<p>For Linux it's best to look at the wiki pages of your distro, e.g.
+<a href="https://wiki.archlinux.org/title/Input_method">Arch Linux</a> and
+<a href="https://wiki.debian.org/Keyboard#Modern_strategy">Debian Linux</a>.
+As an example, <code>apt install ibus-anthy</code> on Debian allows you to type hiragana characters.</p>
+<h3 id="right-to-left-languages"><a class="header" href="#right-to-left-languages">Right-to-left Languages</a></h3>
 <p>If you are learning a right-to-left language, there are lots of other
-things to consider. Please see <a href="http://dotancohen.com/howto/rtl_right_to_left.html">this page</a> for more
-information.</p>
+things to consider. Please see <a href="http://dotancohen.com/howto/rtl_right_to_left.html">this page</a>
+for more information.</p>
+<h3 id="limitations"><a class="header" href="#limitations">Limitations</a></h3>
 <p>The toolkit on which Anki is built has trouble dealing with a few input
 methods, such as holding down keys to select accented characters on macOS,
 and typing characters by holding down the <kbd>Alt</kbd> key and typing a
