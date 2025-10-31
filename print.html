@@ -572,12 +572,12 @@ setting.</p>
 <p>If you receive “access denied” messages, some of Anki’s files may be set to read only mode, meaning Anki is not able to write to them.</p>
 <p>To fix the problem, you can do the following:</p>
 <ul>
-<li>in the search area of the start bar, type cmd.exe and hit enter</li>
-<li>in the window that opens, type the following and hit enter to see your username:</li>
+<li>in the search area of the start bar, type <code>cmd.exe</code> and hit <kbd>Enter</kbd></li>
+<li>in the window that opens, type the following and hit <kbd>Enter</kbd> to see your username:</li>
 </ul>
 <p>whoami</p>
 <ul>
-<li>type the following, hitting enter after each line, and replacing ____ (and keeping the :F part) with your username from the previous command</li>
+<li>type the following, hitting <kbd>Enter</kbd> after each line, and replacing ____ (and keeping the :F part) with your username from the previous command</li>
 </ul>
 <p>cd %APPDATA%</p>
 <p>icacls Anki2 /grant ____:F /t</p>
@@ -585,7 +585,7 @@ setting.</p>
 <h2 id="antivirusfirewallanti-malware"><a class="header" href="#antivirusfirewallanti-malware">Antivirus/Firewall/Anti-Malware</a></h2>
 <p>Some users have experienced “permission denied” or “readonly” errors that were caused by security software installed on their machine. You may need to add an exception for Anki, or try temporarily disabling the software to rule it out as the cause. Some users have reported that simply turning off their software did not fix the problem, and they either had to add an exception for Anki or uninstall the software.</p>
 <h2 id="debugging-permission-problems"><a class="header" href="#debugging-permission-problems">Debugging Permission Problems</a></h2>
-<p>If problems persist after you’ve ruled out Antivirus and related programs, have performed the steps above to fix permissions, and don’t use OneDrive, please run the following commands in cmd.exe, pressing enter after each one.</p>
+<p>If problems persist after you’ve ruled out Antivirus and related programs, have performed the steps above to fix permissions, and don’t use OneDrive, please run the following commands in <code>cmd.exe</code>, pressing <kbd>Enter</kbd> after each one.</p>
 <p>whoami</p>
 <p>cd %APPDATA%</p>
 <p>icacls Anki2 /t</p>
@@ -654,14 +654,14 @@ Preferences</strong> and then selecting the driver from the dropdown menu. After
 is necessary to restart Anki.</p>
 <h3 id="changing-the-driver-from-terminalapp"><a class="header" href="#changing-the-driver-from-terminalapp">Changing the Driver From Terminal.app</a></h3>
 <p>Older Anki versions did not provide an option in the preferences, but allowed
-you to adjust the driver by opening Terminal.app, then pasting the following and hit enter:</p>
+you to adjust the driver by opening Terminal.app, then pasting the following and hit <kbd>Enter</kbd>:</p>
 <pre><code>echo software &gt; ~/Library/Application\ Support/Anki2/gldriver6
 </code></pre>
 <p>It will not print anything. You can then start Anki again.</p>
 <p>If you wish to switch back to the default, change <code>software</code> to <code>auto</code>, or
 remove that file.</p>
 <h2 id="egpus"><a class="header" href="#egpus">eGPUs</a></h2>
-<p>If you experience blank screens when using an external graphics card on a Mac, you can ctrl+click on the Anki app, click “Get Info”, and enable the “prefer eGPU” option.</p>
+<p>If you experience blank screens when using an external graphics card on a Mac, you can <kbd>Ctrl</kbd>+click on the Anki app, click <strong>Get Info</strong>, and enable the <strong>prefer eGPU</strong> option.</p>
 <h2 id="monitors-with-different-resolutions"><a class="header" href="#monitors-with-different-resolutions">Monitors with Different Resolutions</a></h2>
 <p>Please see <a href="https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331">this forum post</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linux"><a class="header" href="#linux">Linux</a></h1>
@@ -678,10 +678,11 @@ remove that file.</p>
 <li><a href="platform/linux/installing.html#installing">Installing</a></li>
 <li><a href="platform/linux/installing.html#upgrading">Upgrading</a></li>
 <li><a href="platform/linux/installing.html#add-on-compatibility">Add-on Compatibility</a></li>
+<li><a href="platform/linux/installing.html#system-qt-versions">System Qt versions</a></li>
 <li><a href="platform/linux/installing.html#problems">Problems</a></li>
 </ul>
 <h2 id="requirements-2"><a class="header" href="#requirements-2">Requirements</a></h2>
-<p>The packaged version requires a recent 64 bit Intel/AMD Linux with glibc, and common
+<p>The packaged version requires a recent 64 bit Intel/AMD Linux with glibc 2.36+, and common
 libraries like libwayland-client and systemd. If you are on a different
 architecture (e.g ARM/AArch64), or a barebones Linux distro, you will not be able to use the
 packaged version, but you may be able to use the <a href="https://betas.ankiweb.net/#via-pypipip">Python wheels</a>
@@ -706,7 +707,7 @@ sudo ./install.sh
 </code></pre>
 <p>On some Linux systems, you may need to use <code>tar xaf --use-compress-program=unzstd</code>.</p>
 <ol start="4">
-<li>You can then start Anki by typing <code>anki</code> and hitting enter. If you encounter
+<li>You can then start Anki by typing <code>anki</code> and hitting <kbd>Enter</kbd>. If you encounter
 any issues, please see the links on the left.</li>
 </ol>
 <h2 id="upgrading-2"><a class="header" href="#upgrading-2">Upgrading</a></h2>
@@ -722,6 +723,38 @@ will be preserved.</p>
 <p>Some add-ons may not always work with the latest Anki release. If you upgrade to
 the latest Anki version and find an add-on you cannot live without stops working,
 you can download older Anki versions from the <a href="https://github.com/ankitects/anki/releases">releases page</a>.</p>
+<h2 id="system-qt-versions"><a class="header" href="#system-qt-versions">System Qt versions</a></h2>
+<p>Anki’s launcher uses the official PyQt builds by default. This makes it easier to
+install Anki on distros that don’t have the relevant Python/Qt versions, but means that
+you may not have access certain Qt features provided by your Linux distro, such as certain
+Qt themes, support for the FCITX input method, etc.</p>
+<p>If your Linux distro provides up-to-date Anki packages, you may find using them easiest.</p>
+<p>If it doesn’t, advanced users may wish to combine Anki’s launcher with their system’s Qt version.
+To do this, your system needs to have a Python version Anki supports (soon to be 3.11+),
+and suitable PyQt libraries (6.2+).</p>
+<p>WARNING: This is an experimental feature, and your system’s Qt may fix some bugs while
+introducing others.</p>
+<ol>
+<li>
+<p>Install Python and the relevant PyQt packages. On Ubuntu:</p>
+<blockquote>
+<p>sudo apt install python3-pyqt6.qtwebengine</p>
+</blockquote>
+</li>
+<li>
+<p>If you previously used the launcher, <code>rm -rf ~/.local/share/AnkiProgramFiles</code>.</p>
+</li>
+<li>
+<p>Untar the launcher, and cd to its folder.</p>
+</li>
+<li>
+<p>Run <code>touch system_qt</code> to create a system_qt file in that folder.</p>
+</li>
+<li>
+<p>Install Anki via ./anki or ./install.sh. In the list of installed packages,
+you should not see any mention of PyQt6.</p>
+</li>
+</ol>
 <h2 id="problems-5"><a class="header" href="#problems-5">Problems</a></h2>
 <p>If you encounter any issues when installing or starting Anki, please see the
 following pages:</p>
@@ -1123,7 +1156,7 @@ such as capital city names or country flags, you probably don’t need any
 external material. However, for complex subjects, shared decks should be used as a <em>supplement</em> to external material, not as a <em>replacement</em> for it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getting-help-1"><a class="header" href="#getting-help-1">Getting help</a></h1>
 <h2 id="asking-good-questions"><a class="header" href="#asking-good-questions">Asking good questions</a></h2>
-<p>With the exception of AnkiMobile, Anki and its support is provided free of
+<p>With the exception of AnkiMobile, Anki and its support are provided free of
 charge, by people who generously volunteer their time. Please bear this in mind
 when posting - if you are rude and demanding, or have made no effort to solve
 the problem on your own, people are less likely to want to help you.</p>
@@ -1199,7 +1232,7 @@ cards for that day will be also displayed here.</p>
 will change to the study screen. You can return to the deck list at any time by clicking on “Decks” at
 the top of the main window. (You can also use the Study
 Deck action in the menu to select a new deck from the keyboard, or you
-can press the <kbd>s</kbd> key to study the currently selected deck.)</p>
+can press the <kbd>S</kbd> key to study the currently selected deck.)</p>
 <p>You can click the gears button to the right of a deck to rename or
 delete the deck, change its <a href="deck-options.html">options</a>, or <a href="exporting.html">export</a> it.</p>
 <h2 id="study-overview"><a class="header" href="#study-overview">Study Overview</a></h2>
@@ -1213,12 +1246,12 @@ may see how many cards will be buried in grey:</p>
 <p>To start a study session, click the <strong>Study Now</strong> button. Anki will
 proceed to show you cards until the cards to be shown for the day have
 run out.</p>
-<p>While studying, you can return to the overview by pressing the <kbd>s</kbd> key
+<p>While studying, you can return to the overview by pressing the <kbd>S</kbd> key
 on your keyboard.</p>
 <h2 id="questions"><a class="header" href="#questions">Questions</a></h2>
 <p>When a card is shown, only the question is shown at first. After
 thinking about the answer, either click the <strong>Show Answer</strong> button, or
-press the spacebar. The answer will then be shown. It’s okay if it takes
+press the <kbd>Space</kbd>. The answer will then be shown. It’s okay if it takes
 you a little while to recall the answer, but as a general rule if you
 can’t answer within about 10 seconds, it’s probably better to move on
 and show the answer than keep struggling to remember.</p>
@@ -2993,7 +3026,7 @@ correctly.</p>
 <p>When making clozes, each cloze number is turned into a separate card. For example, the following will create three cards:</p>
 <pre><code>{{c1::This}} is a {{c2::sample}} {{c3::sentence}}.
 </code></pre>
-<p>If you you later edit the text, and either remove or change a cloze number, the previously created card may become blank. For example:</p>
+<p>If you later edit the text, and either remove or change a cloze number, the previously created card may become blank. For example:</p>
 <pre><code>{{c1::This}} is a {{c2::sample}}
 </code></pre>
 <p>and</p>
@@ -3111,7 +3144,7 @@ Disable this option to hide the card count at the bottom of the screen.</p>
 <p><strong>Show next review time above answer buttons</strong><br />
 Useful to know how far in the future your cards are being pushed.</p>
 <p><strong>Spacebar (or enter) also answers card</strong><br />
-Defines whether a press on the space bar (or the enter key) also answers cards.</p>
+Defines whether a press on <kbd>Space</kbd> or <kbd>Enter</kbd> answers cards.</p>
 <h2 id="editing"><a class="header" href="#editing">Editing</a></h2>
 <h3 id="editing-1"><a class="header" href="#editing-1">Editing</a></h3>
 <p><strong>Paste clipboard images as PNG</strong><br />
@@ -3168,7 +3201,7 @@ with an older version that is on AnkiWeb.</p>
 <li><a href="deck-options.html#maximum-reviewsday">Maximum Reviews/Day</a></li>
 <li><a href="deck-options.html#per-deck-daily-limits">Per-Deck Daily Limits</a></li>
 <li><a href="deck-options.html#new-cards-ignore-review-limit">New Cards Ignore Review Limit</a></li>
-<li><a href="deck-options.html#limits-start-from-the-top">Limits Start From The Top</a></li>
+<li><a href="deck-options.html#limits-start-from-top">Limits Start From Top</a></li>
 </ul>
 </li>
 <li><a href="deck-options.html#new-cards">New Cards</a>
@@ -3354,7 +3387,7 @@ so those learning cards will be subject to the review limit.</p>
 <p>If you have a backlog of overdue review cards, it is recommended that you stop introducing new cards until you
 catch up with that backlog. Continuing to introduce new cards when you’re already behind can
 make the backlog worse.</p>
-<h3 id="limits-start-from-the-top"><a class="header" href="#limits-start-from-the-top">Limits Start From The Top</a></h3>
+<h3 id="limits-start-from-top"><a class="header" href="#limits-start-from-top">Limits Start From Top</a></h3>
 <p>By default, the daily limits of a higher-level deck do not apply if you select one of its subdecks. A parent deck can have a new card limit of 10 cards/day and its subdecks can have a new card limit of 20 cards/day. The limits set on parent deck do not affect the number of new cards you can study from its subdeck.</p>
 <p>When this option is enabled, the limits set on higher-level decks also apply to their subdecks when a subdeck is selected. In the previous example, you will be able to study only 10 new cards from the subdecks instead of 20 new cards.</p>
 <p>This option can be useful if you wish to study individual subdecks, while enforcing a total limit on cards all the subdecks.</p>
@@ -3875,7 +3908,7 @@ and red when a full sync is required.</p>
 <h2 id="media"><a class="header" href="#media">Media</a></h2>
 <p>You can watch a <a href="https://www.youtube.com/watch?v=phP9GGG-PxY">related video</a> on this topic.</p>
 <p>Anki will synchronize any sounds and images used by your notes. It will
-notice when media has been added, removed or replaced in your <a href="files.html#file-locations">media folder</a>, but
+notice when media has been added, removed or replaced in your <a href="files.html#user-data">media folder</a>, but
 will not notice if you have made edits to existing files. To get your edits synced, you
 need to add, remove or replace a file as well.</p>
 <p>One-way syncs (where you’re prompted to upload or download) have no influence over how media
@@ -4752,6 +4785,8 @@ review cards, not including lapsed cards.</p>
 <p><code>is:learn -is:review</code><br />
 cards that are in learning for the first time.</p>
 <h2 id="flags"><a class="header" href="#flags">Flags</a></h2>
+<p><code>flag:0</code><br />
+cards without a flag.</p>
 <p><code>flag:1</code><br />
 cards with a red flag.</p>
 <p><code>flag:2</code><br />
@@ -4785,6 +4820,8 @@ cards that have been answered less than 10 times.</p>
 cards that been lapsed more than 3 times.</p>
 <p><code>prop:ease!=2.5</code><br />
 cards easier or harder than default ease.</p>
+<p><code>prop:pos&lt;=100</code><br />
+new cards with a position in the queue less than or equal to 100.</p>
 <p>The following searches require Anki 23.10+ and FSRS enabled:</p>
 <p><code>prop:s&gt;21</code><br />
 cards with stability greater than 21 days.</p>
@@ -4852,7 +4889,7 @@ Add a backslash before these characters to treat them literally. For example,
 </li>
 <li>
 <p><code>\</code><br />
-Because a backlash is used to remove the special meaning from other characters,
+Because a backslash is used to remove the special meaning from other characters,
 it too is treated specially. If you need to search for an actual backslash,
 use <code>\\</code> instead of <code>\</code>.</p>
 </li>
@@ -5338,7 +5375,8 @@ for each note type first.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="managing-files-and-your-collection"><a class="header" href="#managing-files-and-your-collection">Managing Files and Your Collection</a></h1>
 <ul>
 <li><a href="files.html#checking-your-collection">Checking Your Collection</a></li>
-<li><a href="files.html#file-locations">File Locations</a></li>
+<li><a href="files.html#user-data">User Data</a></li>
+<li><a href="files.html#program-files">Program Files</a></li>
 <li><a href="files.html#startup-options">Startup Options</a></li>
 <li><a href="files.html#dropbox-and-file-syncing">DropBox and File Syncing</a></li>
 <li><a href="files.html#network-filesystems">Network Filesystems</a></li>
@@ -5368,32 +5406,33 @@ way to do it.</p>
 every 2 weeks. This optimization ensures the collection performs well,
 but it does not check for errors or rebuild the tag list when
 automatically optimizing.</p>
-<h2 id="file-locations"><a class="header" href="#file-locations">File Locations</a></h2>
-<p>On <strong>Windows</strong>, the latest Anki versions store your Anki files in your
+<p><a id="file-locations"></a></p>
+<h2 id="user-data"><a class="header" href="#user-data">User Data</a></h2>
+<p>On <strong>Windows</strong>, the latest Anki versions store your collection files in your
 appdata folder. You can access it by opening the file manager, and
 typing <code>%APPDATA%\Anki2</code> in the location field. Older versions of Anki
 stored your Anki files in a folder called <code>Anki</code> in your <code>Documents</code>
 folder.</p>
-<p>On <strong>Mac</strong> computers, recent Anki versions store all their files in the
+<p>On <strong>Mac</strong> computers, recent Anki versions store all user data in the
 <code>~/Library/Application Support/Anki2</code> folder. The Library folder is
 hidden by default, but can be revealed in Finder by holding down the
 option key while clicking on the Go menu. If you’re on an older Anki
 version, your Anki files will be in your <code>Documents/Anki</code> folder.</p>
-<p>On <strong>Linux</strong>, recent Anki versions store your data in
+<p>On <strong>Linux</strong>, recent Anki versions store your user data in
 <code>~/.local/share/Anki2</code>, or <code>$XDG_DATA_HOME/Anki2</code> if you have set a
 custom data path. If you are using a third-party <strong>Flatpak</strong> build,
 your files will be in <code>~/.var/app/net.ankiweb.Anki/data/Anki2/</code>.
 Older versions of Anki stored your files in
 <code>~/Documents/Anki</code> or <code>~/Anki</code>.</p>
 <p>Within the Anki folder, the program-level and profile-level preferences
-are stored in a file called prefs.db.</p>
+are stored in a file called <code>prefs.db</code>.</p>
 <p>There is also a separate folder for each profile. The folder contains:</p>
 <ul>
 <li>
-<p>Your notes, decks, cards and so on in a file called collection.anki2</p>
+<p>Your notes, decks, cards and so on in a file called <code>collection.anki2</code></p>
 </li>
 <li>
-<p>Your audio and images in a collection.media folder</p>
+<p>Your audio and images in a <code>collection.media</code> folder</p>
 </li>
 <li>
 <p>A backups folder</p>
@@ -5405,6 +5444,26 @@ are stored in a file called prefs.db.</p>
 <p>You should never copy or move your collection while Anki is open. Doing
 so could cause your collection to become corrupt. Please do not move or
 modify the other files in the folder either.</p>
+<h2 id="program-files"><a class="header" href="#program-files">Program Files</a></h2>
+<p>Anki’s launcher is installed in the following locations by default:</p>
+<ul>
+<li>Windows: <code>%LOCALAPPDATA%\Programs\Anki</code></li>
+<li>macOS: <code>/Applications/Anki.app</code></li>
+<li>Linux: <code>/usr/local/share/anki</code></li>
+</ul>
+<p>When you install/update Anki with the launcher, it downloads support
+files and places them in the following locations:</p>
+<ul>
+<li>Windows: <code>%LOCALAPPDATA%\AnkiProgramFiles</code></li>
+<li>macOS: <code>~/Library/Application Support/AnkiProgramFiles</code></li>
+<li>Linux: <code>~/.local/share/AnkiProgramFiles</code></li>
+</ul>
+<p>Removing that folder will cause the launcher to behave like a fresh install.</p>
+<p>The <code>AnkiProgramFiles</code> contains all the files needed to run Anki aside from
+the launcher. You can copy it to a different folder or system, and start
+Anki from the new location by opening <code>AnkiProgramFiles/.venv/bin/anki</code> (or
+<code>AnkiProgramFiles\.venv\scripts\anki</code> on Windows). If placed in the standard location on a new computer, the launcher will also be able to re-use the existing files, provided the files were copied with modification times preserved.</p>
+<p>See the flash drive section below for more.</p>
 <h2 id="startup-options"><a class="header" href="#startup-options">Startup Options</a></h2>
 <p>If you have made a destructive change on one computer and have an
 undamaged copy on another computer, you may wish to start Anki without
@@ -5412,7 +5471,7 @@ syncing in order to use the full sync option without first downloading
 the changes. Similarly, if you are experiencing problems with Anki, you
 might need to (or might be instructed to) disable add-ons temporarily to
 see if one might be causing the problem. To do both of these things at the same time, you can
-open Anki in safe mode by holding down the <kbd>Shift</kbd> key while starting Anki. Keep holding <kbd>Shift</kbd> down until the on-screen message informs you that Anki has started in safe mode.</p>
+open Anki in safe mode by holding down the <kbd>Shift</kbd> key while starting Anki. Keep holding <kbd>Shift</kbd> down until the on-screen message informs you that Anki has started in safe mode. If you’re on Linux and that didn’t work, run ‘anki –safemode’.</p>
 <p>It is possible to specify a custom folder location during startup. This
 is an advanced feature that is primarily intended to be used with
 portable installations, and we recommend you use the default location in
@@ -5477,34 +5536,36 @@ Database to detect corruption is recommended.</p>
 <h2 id="running-from-a-flash-drive"><a class="header" href="#running-from-a-flash-drive">Running from a Flash Drive</a></h2>
 <p>On Windows, Anki can be installed on a USB / flash drive and run as a
 portable application. The following example assumes your USB drive is
-drive G.</p>
-<ul>
-<li>
-<p>Copy the \Program Files\Anki folder to the flash drive, so you
-have a folder like G:\Anki.</p>
-</li>
-<li>
-<p>Create a text file called G:\anki.bat with the following text:</p>
-<p>g:\anki\anki.exe -b g:\ankidata</p>
-</li>
-</ul>
-<p>If you would like to prevent the black command prompt window from
-remaining open, you can instead use:</p>
-<pre><code>start /b g:\anki\anki.exe -b g:\ankidata
-</code></pre>
-<ul>
-<li>Double-clicking on anki.bat should start Anki with the user data
-stored in G:\ankidata.</li>
-</ul>
-<p>The full path including drive letter is required - if you try using
-<code>\anki\anki.exe</code> instead you will find syncing stops working.</p>
-<p>Media syncing with AnkiWeb may not work if your flash drive is formatted
+drive E; adjust as necessary.</p>
+<p>WARNING: The drive letter must be the same on all devices. If you set this up for drive E,
+it won’t work for a flash drive mapped to drive D for example.</p>
+<p>WARNING: Media syncing with AnkiWeb may not work if your flash drive is formatted
 as FAT32. Please format the drive as NTFS to ensure media syncs
 correctly.</p>
+<ol>
+<li>Download the latest Anki launcher, and install it in a custom location:
+<code>E:\Anki\Launcher</code>. Not <code>E:\Anki\Launcher\Anki</code>.</li>
+<li>When the launcher appears, close it without installing.</li>
+<li>Put the following in a file <code>E:\Anki\Anki.bat</code>:</li>
+</ol>
+<pre><code class="language-bat">@echo off
+echo Starting Anki...
+set USB_ROOT=%~dp0
+set ANKI_LAUNCHER_VENV_ROOT=%USB_ROOT%\AnkiProgramFiles
+set ANKI_LAUNCHER=%USB_ROOT%\Launcher\anki
+set ANKI_BASE=%USB_ROOT%\AnkiData
+start /b %ANKI_LAUNCHER%
+</code></pre>
+<ol start="4">
+<li>Double-click on the .bat file you created, and install Anki as normal.</li>
+<li>You can now double-click on the .bat file to run Anki from other machines.</li>
+</ol>
+<p>Tools&gt;Upgrade/Downgrade will continue to function, but only when your machine
+has access to the internet.</p>
 <h2 id="backups-2"><a class="header" href="#backups-2">Backups</a></h2>
 <p>Please see <a href="./backups.html">this section</a>.</p>
 <h2 id="inaccessible-harddisk"><a class="header" href="#inaccessible-harddisk">Inaccessible Harddisk</a></h2>
-<p>If Anki can’t write to files in the <a href="files.html#file-locations">Anki folder</a>, a message
+<p>If Anki can’t write to files in the <a href="files.html#user-data">Anki folder</a>, a message
 will be displayed on startup saying that Anki can’t write to the
 harddisk, and Anki will close. If you’re unsure how to fix the
 permissions, please contact someone near you who is knowledgeable about
@@ -5877,7 +5938,7 @@ and 3 for early “cram” cards (cards being studied in a filtered deck when th
 are not due).</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="media-1"><a class="header" href="#media-1">Media</a></h1>
 <p>Anki stores the sounds and images used in your notes in a folder next to
-the collection. For more on the folder location, please see the <a href="files.html#file-locations">file locations</a> section. When you add media within Anki, either by
+the collection. For more on the folder location, please see the <a href="files.html#user-data">file locations</a> section. When you add media within Anki, either by
 using the paperclip icon in the <a href="editing.html">editor</a> or by pasting it into
 a field, Anki will copy it from its original location into the media
 folder. This makes it easy to back up your collection’s media or move it
@@ -5915,7 +5976,7 @@ deleted.</p>
 filenames are encoded in a way that should work across different devices,
 removing characters that won’t work on certain operating systems,
 and truncating very long filenames.</p>
-<p>If you manually add files to your <a href="files.html#file-locations">media folder</a>,
+<p>If you manually add files to your <a href="files.html#user-data">media folder</a>,
 you should use Tools&gt;Check Media afterwards, to ensure the filenames are
 encoded correctly. If you skip this step, any filenames that are not compatible
 will be skipped when syncing.</p>
@@ -6282,7 +6343,8 @@ circumstances.</p>
 <h3 id="2-check-add-ons"><a class="header" href="#2-check-add-ons">2. Check add-ons</a></h3>
 <p>Please close Anki, then open it in safe mode by holding down the
 <kbd>Shift</kbd> key while starting Anki. Keep holding <kbd>Shift</kbd> down
-until the on-screen message informs you that Anki has started in safe mode.</p>
+until the on-screen message informs you that Anki has started in safe mode.
+If you’re on Linux and that didn’t work, run ‘anki –safemode’.</p>
 <p>If the problem goes away, that indicates an add-on is causing the problem.
 Remove any add-ons you don’t need, and disable half of the others. If the
 problem continues, try the other half. Repeat the process until you’ve figured
@@ -6295,8 +6357,7 @@ About</strong> menu. If the version you’re using is not the latest version pub
 <a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a>, please close Anki, install the latest version, and
 then start Anki again to see if the problem has gone away.</p>
 <p>If you’re using Linux, please make sure you can reproduce the error using the
-packaged version on the Anki website, as distros often distribute <a href="platform/linux/distro-packages.html">broken
-versions</a>.</p>
+packaged version on the Anki website, as distros often distribute <a href="platform/linux/distro-packages.html">broken versions</a>.</p>
 <h3 id="4-check-your-database"><a class="header" href="#4-check-your-database">4. Check your database</a></h3>
 <p>After restarting Anki, please try the <strong>Tools → Check Database</strong> menu item to
 make sure your collection doesn’t have any problems.</p>
@@ -6322,7 +6383,7 @@ change the gldriver file:</p>
 immediately after starting Anki will help.</p>
 <h3 id="8-if-the-problem-remains"><a class="header" href="#8-if-the-problem-remains">8. If the problem remains</a></h3>
 <p>If you’ve confirmed you are using the latest Anki version, and are still
-receiving errors when starting Anki while holding down the shift key,
+receiving errors even with add-ons disabled,
 please <a href="./getting-help.html">report the problem</a>, including the next error you
 receive in your post.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="self-hosted-sync-server-1"><a class="header" href="#self-hosted-sync-server-1">Self-Hosted Sync Server</a></h1>
@@ -6352,11 +6413,12 @@ has been configured, (e.g “Cannot connect to AnkiWeb” when your server is do
 <p>This uses the sync server built into the desktop version of Anki as of version 2.1.57+.</p>
 <p>On Windows in a cmd.exe session:</p>
 <pre><code>set SYNC_USER1=user:pass
-"\Program Files\anki\anki.exe" --syncserver
+"\Program Files\anki\anki-console" --syncserver
 </code></pre>
 <p>Or MacOS, in Terminal.app:</p>
-<pre><code>SYNC_USER1=user:pass /Applications/Anki.app/Contents/MacOS/anki --syncserver
+<pre><code>SYNC_USER1=user:pass /Applications/Anki.app/Contents/MacOS/launcher --syncserver
 </code></pre>
+<p>Replace ‘launcher’ with ‘anki’ for old packaged builds prior to 25.07.</p>
 <p>Or Linux:</p>
 <pre><code>SYNC_USER1=user:pass anki --syncserver
 </code></pre>
@@ -6379,7 +6441,7 @@ Make sure you have Rustup installed.</p>
 </code></pre>
 <h3 id="from-a-source-checkout"><a class="header" href="#from-a-source-checkout">From a source checkout</a></h3>
 <p>If you’ve cloned the Anki repo from GitHub, you can install from there:</p>
-<pre><code>./ninja extract:protoc
+<pre><code>./ninja extract:protoc ftl_repo
 cargo install --path rslib/sync
 </code></pre>
 <h3 id="with-docker"><a class="header" href="#with-docker">With Docker</a></h3>
@@ -6393,7 +6455,7 @@ wish to set up multiple accounts.</p>
 <p>Advanced users may wish to use hashed passwords instead of plain text
 passwords. If you wish to do this, you’ll need to use a separate tool (such as
 <a href="https://git.sr.ht/~laalsaas/pbkdf2-password-hash">this one</a>) to generate a
-password hash.  You can then tell the server to expect hashed passwords by
+password hash. You can then tell the server to expect hashed passwords by
 setting the env var PASSWORDS_HASHED to 1 (or any other value).</p>
 <p>When hashed passwords are used, SYNC_USER variables are expected to be in
 username:password_hash format, where password_hash is a hash of the password in
@@ -6424,7 +6486,7 @@ point each of your Anki clients to the address, e.g something like
 network, please go into the iOS settings, locate Anki near the bottom, and
 toggle “Allow Anki to access local network” off and then on again.</p>
 <p>Older desktop clients required you to define <code>SYNC_ENDPOINT</code> and
-<code>SYNC_ENDPOINT_MEDIA</code>.  If using an older client, you’d put it as e.g.
+<code>SYNC_ENDPOINT_MEDIA</code>. If using an older client, you’d put it as e.g.
 <code>http://192.168.1.200:8080/sync/</code> and <code>http://192.168.1.200:8080/msync/</code>
 respectively. AnkiDroid clients before 2.16 require separate configuration for
 the two endpoints.</p>
@@ -6475,7 +6537,7 @@ and in the main window, press</p>
 of <kbd>;</kbd>.</p>
 <p>In the window that has popped up, please paste the text you were asked
 to paste in the top section. When you’ve done so, please press
-Ctrl+Return (Command+Return on a Mac), and some text should appear in
+<kbd>Ctrl</kbd>+<kbd>Return</kbd> (On Mac, <kbd>Command</kbd>+<kbd>Return</kbd>), and some text should appear in
 the bottom section. If you’ve been asked to paste the resulting output,
 please copy it from the bottom area, and paste it back to the support
 person.</p>
